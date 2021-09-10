@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource name="jdbc/conPool"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="Sasha"
+              password="12345678"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/mydb?autoReconnect=true"
+              validationQuery="select 1"
+              maxActive="20"
+              maxIdle="4"/>
+</Context>

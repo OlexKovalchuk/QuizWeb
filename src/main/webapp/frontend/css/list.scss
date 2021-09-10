@@ -1,0 +1,247 @@
+.serviceBox {
+  color: #999;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 10px 0 15px;
+  position: relative;
+}
+
+.serviceBox:before,
+.serviceBox:after {
+  content: "";
+  background: #1e5270;
+  width: 150px;
+  height: 10px;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  clip-path: polygon(7% 0%, 93% 0%, 100% 100%, 0% 100%);
+}
+
+.serviceBox:after {
+  width: 80%;
+  height: 15px;
+  border-radius: 0 0 10px 10px;
+  top: auto;
+  bottom: 0;
+  clip-path: none;
+}
+
+.serviceBox .service-content {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 10px;
+}
+
+.serviceBox .service-content:before {
+  content: "";
+  background: #1b657e;
+  width: 128px;
+  height: 100px;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.serviceBox .service-icon {
+  color: #77787a;
+  background: linear-gradient(to left, #dedfe1, #f3f3f3);
+  font-size: 40px;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.03);
+  position: relative;
+  z-index: 1;
+}
+
+.serviceBox .title {
+  color: #1e5270;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.serviceBox .description {
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+  height: 100px;
+  overflow: hidden;
+}
+
+.serviceBox.green:before {
+  background: #719e2a;
+}
+
+.serviceBox.green:after,
+.serviceBox.green .service-content:before {
+  background: #85bc16;
+}
+
+.serviceBox.green .title {
+  color: #85bc16;
+}
+
+@media only screen and (max-width: 990px) {
+  .serviceBox {
+    margin: 0 0 30px;
+  }
+}
+
+.jss87 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.jss106 {
+  justify-content: space-between;
+}
+
+.jss88 {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.jss933 {
+  position: relative;
+  box-shadow: 0 16px 32px rgb(0 0 0 / 8%);
+  font-family: Montserrat;
+  margin-bottom: 24px;
+  border-radius: 6px;
+}
+
+.jss19 {
+  font-family: Montserrat;
+}
+
+.jss944 {
+  margin-top: 28px;
+  margin-bottom: 4px;
+}
+
+
+.jss938 {
+  color: #323232;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.jss939 {
+  color: #65C15D;
+}
+
+.jss941 {
+  color: #878D9A;
+  font-weight: normal;
+  padding-right: 4px;
+}
+
+.jss940 {
+  color: #333333;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+}
+
+.jss1104 {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+
+.jss121 {
+  flex-grow: 0;
+  max-width: 50%;
+  flex-basis: 50%;
+}
+
+.jss1105 {
+  padding: 6px 8px;
+}
+.jss950 {
+  background-color: #65C15D;
+}
+.jss951 {
+  background-color: #6049EB;
+}
+
+.jss949 {
+  color: #ffffff;
+  width: 100%;
+  height: 56px;
+  font-size: 18px;
+  border-radius: 56px;
+  text-transform: none;
+}
+
+.jss1103 {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  line-height: 1.75;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+
+.jss370 {
+  color: inherit;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  outline: none;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  vertical-align: middle;
+  justify-content: center;
+  -moz-appearance: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.displayOutHover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.jss968 {
+  display: block;
+}
+
+.jss539 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  position: absolute;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.jss956 {
+  margin-top: 16px;
+  border-top: 1px solid #C3C6CD;
+  padding-top: 20px;
+}

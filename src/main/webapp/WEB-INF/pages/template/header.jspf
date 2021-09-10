@@ -1,0 +1,8 @@
+<div class="header">
+    <a href="#default" class="logo">Quiz</a>
+    <div class="header-right">
+        <a href="${pageContext.request.contextPath}/home?command=logout">Logout</a>
+        <a href="${pageContext.request.contextPath}/home?command=home">Tests</a>
+        <a href="${pageContext.request.contextPath}/home?command=profile">Profile</a>
+    </div>
+</div>
