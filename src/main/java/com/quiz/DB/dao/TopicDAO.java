@@ -39,7 +39,7 @@ public class TopicDAO {
 
     public static void deleteTopic(int id) {
         try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("DELETE FROM topi where id=?;")) {
+             PreparedStatement statement = connection.prepareStatement("DELETE FROM topic where id=?;")) {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
