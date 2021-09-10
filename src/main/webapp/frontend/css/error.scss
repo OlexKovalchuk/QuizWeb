@@ -1,0 +1,17 @@
+.error {
+  &__img {
+    img {
+      width:20%;
+      margin: 0 40%;
+    }
+  }
+  p {
+    font-size:1.5em;
+    text-align:center;
+  }
+  &__back {
+    width:20%;
+    margin:0 40%;
+  }
+
+}
