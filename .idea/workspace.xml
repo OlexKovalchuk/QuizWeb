@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e8efcd3-c4b8-4e6d-8b5b-803e871fb352" name="Changes" comment="" />
+    <list default="true" id="7e8efcd3-c4b8-4e6d-8b5b-803e871fb352" name="Changes" comment="alpha_version">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/TopicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/TopicDAO.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +34,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -48,6 +53,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1xUpiNuVJW8a5wJNc51V26gHHUD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -290,11 +296,34 @@
       <workItem from="1631217404969" duration="1946000" />
       <workItem from="1631225501076" duration="3639000" />
       <workItem from="1631270442957" duration="5220000" />
-      <workItem from="1631280894256" duration="7905000" />
+      <workItem from="1631280894256" duration="8224000" />
     </task>
+    <task id="LOCAL-00001" summary="alpha_version">
+      <created>1631289404746</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631289404746</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="alpha_version" />
+    <option name="LAST_COMMIT_MESSAGE" value="alpha_version" />
   </component>
 </project>
