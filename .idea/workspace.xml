@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e8efcd3-c4b8-4e6d-8b5b-803e871fb352" name="Changes" comment="alpha_version">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/TopicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/TopicDAO.java" afterDir="false" />
-    </list>
+    <list default="true" id="7e8efcd3-c4b8-4e6d-8b5b-803e871fb352" name="Changes" comment="alpha_version" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -296,7 +294,7 @@
       <workItem from="1631217404969" duration="1946000" />
       <workItem from="1631225501076" duration="3639000" />
       <workItem from="1631270442957" duration="5220000" />
-      <workItem from="1631280894256" duration="8224000" />
+      <workItem from="1631280894256" duration="8641000" />
     </task>
     <task id="LOCAL-00001" summary="alpha_version">
       <created>1631289404746</created>
@@ -305,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631289404746</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="alpha_version">
+      <created>1631289424406</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631289424406</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
