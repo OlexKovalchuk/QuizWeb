@@ -1,11 +1,10 @@
 package com.quiz.controller.command;
 
-import com.quiz.DB.dao.TestDAO;
-import com.quiz.DB.dao.UserDAO;
 import com.quiz.controller.utils.Encryptor;
-import com.quiz.controller.utils.Pages;
+import com.quiz.controller.utils.WebPath;
 import com.quiz.entity.Role;
 import com.quiz.entity.User;
+import com.quiz.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,29 +16,31 @@ import java.sql.Date;
 
 public class RegisterCommand implements Command {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+    public WebPath execute(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {
         HttpSession session = request.getSession(true);
-        String login = request.getParameter("login");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
 
         User user = new User();
-        user.setFirstName(name);
+        user.setName(name);
         user.setRole(Role.STUDENT);
         try {
             user.setPassword(Encryptor.encrypt(password));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        user.setSecondName(surname);
-        user.setLogin(login);
+        user.setSurname(surname);
+        user.setEmail(email);
         user.setBlock(0);
         user.setCreationDate(new Date(System.currentTimeMillis()));
-        UserDAO.insertUser(user);
+        UserService userService = new UserService();
+
+        userService.insertUser(user);
         session.setAttribute("user", user);
-        request.setAttribute("tests", TestDAO.getAllTests());
-        return Pages.HOME;
+        return new WebPath(WebPath.WebPageEnum.HOME.getPath(), WebPath.DispatchType.REDIRECT);
+
     }
 }

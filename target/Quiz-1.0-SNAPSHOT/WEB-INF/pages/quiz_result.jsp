@@ -1,5 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="${sessionScope.lang}"/>
+<fmt:setBundle basename="language"/>
 <html>
 <head>
     <title>Profile</title>
@@ -33,7 +36,7 @@
     height: 0px;">
     <center>
         <button type="submit" class="fill"
-                onclick="location.href='${pageContext.request.contextPath}/home?command=home'">Back to tests
+                onclick="location.href='${pageContext.request.contextPath}/home'">Back to quizzes
         </button>
     </center>
 </div>

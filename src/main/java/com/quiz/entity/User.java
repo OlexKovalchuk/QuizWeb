@@ -5,9 +5,9 @@ import java.sql.Date;
 
 public class User implements Serializable {
     private int id;
-    private String firstName;
-    private String secondName;
-    private String login;
+    private String name;
+    private String surname;
+    private String email;
     private String password;
     private Role role;
     private int block;
@@ -39,28 +39,28 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getSecondName() {
-        return secondName;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public String getLogin() {
-        return login;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -96,23 +96,23 @@ public class User implements Serializable {
 
         User other = (User) obj;
 
-        if (firstName == null) {
-            if (other.firstName != null)
+        if (name == null) {
+            if (other.name != null)
                 return false;
-        } else if (!firstName.equals(other.firstName))
+        } else if (!name.equals(other.name))
             return false;
         if (id != other.id)
             return false;
-        if (login == null) {
-            if (other.login != null)
+        if (email == null) {
+            if (other.email != null)
                 return false;
-        } else if (!login.equals(other.login))
+        } else if (!email.equals(other.email))
             return false;
         if (role != other.role)
             return false;
-        if (secondName == null) {
-            return other.secondName == null;
-        } else return secondName.equals(other.secondName);
+        if (surname == null) {
+            return other.surname == null;
+        } else return surname.equals(other.surname);
     }
 
 }

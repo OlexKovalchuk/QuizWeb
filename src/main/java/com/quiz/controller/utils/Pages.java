@@ -12,4 +12,6 @@ public final class Pages {
     public static final String LIST_USERS ="/WEB-INF/pages/list_users.jsp";
     public static final String TEST ="/WEB-INF/pages/test.jsp";
     public static final String QUIZ_RESULT ="/WEB-INF/pages/quiz_result.jsp";
+    public static final String TEST_CREATE ="/WEB-INF/pages/test_create.jsp";
+    public static final String EDIT_QUIZ ="/WEB-INF/pages/editTest.jsp";
 }

@@ -1,5 +1,6 @@
 package com.quiz.entity;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Question {
@@ -14,6 +15,14 @@ public class Question {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getCorrectAnswerCount() {
+        int count = 0;
+        for (Answer answer : answers) {
+            if (answer.getAnswer() == 1) count++;
+        }
+        return count;
     }
 
     public int getTestId() {
@@ -36,8 +45,15 @@ public class Question {
         return answers;
     }
 
-    public boolean isCorrect(int pos) {
-        return getAnswers().get(pos).getAnswer() == 1;
+    public boolean isCorrect(String[] answersArray) {
+        List<String> answersList = Arrays.asList(answersArray);
+        System.out.println(answersList);
+        for (int i = 0; i < answers.size(); i++) {
+            if ((answers.get(i).getAnswer() == 1 && !answersList.contains(Integer.toString(i))) || (answers.get(i).getAnswer() == 0 && answersList.contains(Integer.toString(i)))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void setAnswers(List<Answer> answers) {

@@ -1,9 +1,9 @@
 package com.quiz.controller.command;
 
-import com.quiz.DB.dao.UserDAO;
 import com.quiz.controller.utils.Encryptor;
-import com.quiz.controller.utils.Pages;
+import com.quiz.controller.utils.WebPath;
 import com.quiz.entity.User;
+import com.quiz.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,21 +13,22 @@ import java.security.NoSuchAlgorithmException;
 
 public class EditPersonalInfoCommand implements Command {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+    public WebPath execute(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {
+        UserService userService = new UserService();
         User user = (User) request.getSession().getAttribute("user");
-        String login = request.getParameter("login");
+        String email = request.getParameter("email");
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String password = request.getParameter("password");
-        if (login.length()>0) {
-            user.setLogin(login);
+        if (email.length()>0) {
+            user.setEmail(email);
         }
         if (name.length()>0) {
-            user.setFirstName(name);
+            user.setName(name);
         }
         if (surname.length()>0) {
-            user.setSecondName(surname);
+            user.setSurname(surname);
         }
         if (password.length()>0) {
             try {
@@ -36,7 +37,7 @@ public class EditPersonalInfoCommand implements Command {
                 e.printStackTrace();
             }
         }
-        UserDAO.updateUser(user);
-        return Pages.PROFILE;
+        userService.updateUser(user);
+        return new WebPath(WebPath.WebPageEnum.PROFILE.getPath(), WebPath.DispatchType.REDIRECT);
     }
 }
