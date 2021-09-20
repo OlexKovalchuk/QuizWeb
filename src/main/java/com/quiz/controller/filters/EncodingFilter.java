@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
-@WebFilter(filterName = "EncodingFilter")
+@WebFilter(urlPatterns = {"/*"})
 public class EncodingFilter implements Filter {
     final static Logger logger = Logger.getLogger(EncodingFilter.class);
 

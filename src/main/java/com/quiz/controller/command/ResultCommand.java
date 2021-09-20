@@ -1,31 +1,61 @@
 package com.quiz.controller.command;
 
 import com.quiz.controller.utils.Pages;
+import com.quiz.controller.utils.WebPath;
+import com.quiz.entity.Result;
 import com.quiz.entity.User;
+import com.quiz.service.ResultService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
 
 public class ResultCommand implements Command {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+    public WebPath execute(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {
-        uploadUserToSession(request);
-        return Pages.RESULT;
-    }
-
-    private void uploadUserToSession(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
+        List<Result> results = null;
+        HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
+        ResultService resultService = new ResultService();
+        String sort = request.getParameter("sort");
+        int page = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
+        if (sort != null) {
+            switch (sort) {
+                case "topic":
+                    results = resultService.getUserResultsWithPaginationByTopic(user.getId(),
+                            page);
+                    break;
+                case "score":
+                    results = resultService.getUserResultsWithPaginationByScore(user.getId(),
+                            page);
+                    break;
+                case "date":
+                    results = resultService.getUserResultsWithPaginationByDate(user.getId(),
+                            page);
+                    break;
+                case "quiz":
+                    results = resultService.getUserResultsWithPaginationByQuiz(user.getId(),
+                            page);
+                    break;
+                default:
+                    results = resultService.getUserResultsWithPagination(user.getId(), page);
+                    break;
 
-        if (request.getParameter("page")==null) {
-            PaginationCommand.pagination(request, 1, ((User) request.getSession().getAttribute("user")).getId());
+            }
         } else {
-            int page = Integer.parseInt(request.getParameter("page"));
-            PaginationCommand.pagination(request, page, ((User) request.getSession().getAttribute("user")).getId());
+            results = resultService.getUserResultsWithPagination(user.getId(), page);
         }
+        request.setAttribute("sort",sort);
+        request.setAttribute("page",page);
+        request.setAttribute("pagesCount", (int) Math.ceil(resultService.getUserResultsCount(user.getId()) / 5.0));
+
+        request.setAttribute("userResults", results);
+        return new WebPath(Pages.RESULT, WebPath.DispatchType.FORWARD);
+
     }
+
 }

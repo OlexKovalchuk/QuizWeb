@@ -1,7 +1,7 @@
 package com.quiz.entity;
 
 public enum Role {
-    STUDENT("student"), TEACHER("teacher");
+    STUDENT("student"), TEACHER("admin");
 
     Role(String roleName) {
         this.roleName = roleName;
@@ -14,7 +14,7 @@ public enum Role {
     }
 
     public static Role getRoleFromString(String role) {
-        if (role.equals("teacher")) {
+        if (role.equals("admin")) {
             return TEACHER;
         }
         return STUDENT;

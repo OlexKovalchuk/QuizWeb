@@ -5,34 +5,46 @@ import java.util.TreeMap;
 
 
 public class CommandHolder {
-    private static final Map<String, Command> commands = new TreeMap<>();
+    private static final Map<String, Command> commandsPOST = new TreeMap<>();
+    private static final Map<String, Command> commandsGET = new TreeMap<>();
 
     private CommandHolder() {
 
     }
-
     static {
-        commands.put("loadRegister", new LoadRegisterPageCommand());
-        commands.put("login", new LoginCommand());
-        commands.put("noCommand", new ErrorCommand());
-        commands.put("register", new RegisterCommand());
-        commands.put("logout", new LogoutCommand());
-        commands.put("profile", new ProfileCommand());
-        commands.put("home", new HomeCommand());
-        commands.put("result", new ResultCommand());
-        commands.put("editUserPersonalInfo", new EditPersonalInfoCommand());
-        commands.put("loadEditPersonalInfo", new LoadEditPersonalInfoCommand());
-        commands.put("listUsers", new ShowUsersCommand());
-        commands.put("block", new BlockUserCommand());
-        commands.put("startTest", new StartTestCommand());
-        commands.put("finishQuiz", new FinishQuizCommand());
+        commandsGET.put("/register", new LoadRegisterPageCommand());
+        commandsGET.put("/login", new LoadLoginCommand());
+        commandsGET.put("/profile", new ProfileCommand());
+        commandsGET.put("/profile/edit", new LoadEditPersonalInfoCommand());
+        commandsGET.put("/home", new HomeCommand());
+        commandsGET.put("/profile/results", new ResultCommand());
+        commandsGET.put("/create", new CreateTestCommand());
+        commandsGET.put("/finish", new ShowQuizResultCommand());
+        commandsGET.put("/edit", new EditQuizCommand());
+        commandsGET.put("/profile/users", new ShowUsersCommand());
+        commandsGET.put("/logout", new LogoutCommand());
+        commandsPOST.put("/edit", new POSTEditQuizCommand());
+        commandsPOST.put("/login", new LoginCommand());
+        commandsGET.put("/error", new ErrorCommand());
+        commandsPOST.put("/register", new RegisterCommand());
+        commandsPOST.put("/profile/edit", new EditPersonalInfoCommand());
+        commandsPOST.put("/start", new StartTestCommand());
+        commandsPOST.put("/finish", new FinishQuizCommand());
+        commandsPOST.put("/create", new SaveQuizCommand());
     }
 
     public static Command get(String commandName) {
-        if (commandName == null || !commands.containsKey(commandName)) {
-            return commands.get("noCommand");
+        if (commandName == null || !commandsGET.containsKey(commandName)) {
+            return commandsGET.get("/error");
         }
-        return commands.get(commandName);
+        return commandsGET.get(commandName);
+    }
+
+    public static Command getPOST(String commandName) {
+        if (commandName == null || !commandsPOST.containsKey(commandName)) {
+            return commandsPOST.get("/error");
+        }
+        return commandsPOST.get(commandName);
     }
 }
 

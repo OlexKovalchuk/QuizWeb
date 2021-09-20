@@ -7,6 +7,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="${sessionScope.lang}"/>
+<fmt:setBundle basename="language"/>
 <html>
 <head>
     <title>Profile</title>
@@ -23,23 +26,23 @@
         <hr style=" clear: both;
     border: 1px solid transparent;
     height: 0px;">
-        <button type="button" class="fill"
-                onclick="location.href='${pageContext.request.contextPath}/home?command=loadEditPersonalInfo'">Edit your
-            personal info
-        </button>
-        <hr style=" clear: both;
-    border: 1px solid transparent;
-    height: 0px;">
-        <button type="button" class="fill"
-                onclick="location.href='${pageContext.request.contextPath}/home?command=result'">Results
-        </button>
-        <hr style=" clear: both;
-    border: 1px solid transparent;
-    height: 0px;">
-        <c:if test="${sessionScope.user.role.roleName.equals('teacher')}">
-            <button type="submit" class="fill"
-                    onclick="location.href='${pageContext.request.contextPath}/home?command=listUsers'">Check users
+        <form method="get" action="${pageContext.request.contextPath}/profile/edit">
+            <button type="submit" class="fill">
+                <fmt:message key="msg.edit-personal-info"/>
             </button>
+        </form>
+        <hr style=" clear: both;
+    border: 1px solid transparent;
+    height: 0px;">
+
+        <form method="get" action="${pageContext.request.contextPath}/profile/results?sort=date&page=1">
+            <button type="submit" class="fill"><fmt:message key="msg.results"/></button>
+        </form>
+        <hr style=" clear: both;
+    border: 1px solid transparent;
+    height: 0px;">
+        <c:if test="${sessionScope.user.role.roleName.equals('admin')}">
+                <button type="submit" onclick="location.href='${pageContext.request.contextPath}/profile/users?sort=score&page=1'" class="fill"><fmt:message key="msg.check-users"/></button>
         </c:if>
     </center>
 </div>

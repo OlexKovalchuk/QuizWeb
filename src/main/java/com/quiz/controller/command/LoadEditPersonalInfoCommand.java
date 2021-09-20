@@ -1,6 +1,7 @@
 package com.quiz.controller.command;
 
 import com.quiz.controller.utils.Pages;
+import com.quiz.controller.utils.WebPath;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -9,7 +10,7 @@ import java.io.IOException;
 
 public class LoadEditPersonalInfoCommand implements Command{
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        return Pages.PERSONAL_INFO;
+    public WebPath execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        return new WebPath( Pages.PERSONAL_INFO, WebPath.DispatchType.FORWARD);
     }
 }

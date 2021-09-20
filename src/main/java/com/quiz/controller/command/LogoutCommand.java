@@ -1,6 +1,6 @@
 package com.quiz.controller.command;
 
-import com.quiz.controller.utils.Pages;
+import com.quiz.controller.utils.WebPath;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,7 +12,7 @@ import java.io.IOException;
 public class LogoutCommand implements Command {
     final static Logger logger = Logger.getLogger(LogoutCommand.class);
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public WebPath execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         logger.debug("LogoutCommand starts");
         HttpSession session = request.getSession(false);
         if (session != null) {
@@ -23,6 +23,8 @@ public class LogoutCommand implements Command {
             logger.info("Sessions doesn't exits");
         }
         logger.debug("LogoutCommand finished" + System.lineSeparator());
-        return Pages.STARTPAGE;
+        return new WebPath(WebPath.WebPageEnum.LOGIN.getPath(), WebPath.DispatchType.REDIRECT);
+
+
     }
 }
