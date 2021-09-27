@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <fmt:setLocale value="${sessionScope.lang}"/>
 <fmt:setBundle basename="language"/>
 <html>
@@ -12,8 +12,7 @@
         <%@include file="/frontend/css/style.css" %>
     </style>
 </head>
-<body>
-<%@include file="/WEB-INF/pages/template/header.jspf" %>
+<t:page title="Error">
 <div class="container">
     <section class="page_404">
         <div class="container">
@@ -36,5 +35,5 @@
         </div>
     </section>
 </div>
-</body>
+</t:page>
 </html>

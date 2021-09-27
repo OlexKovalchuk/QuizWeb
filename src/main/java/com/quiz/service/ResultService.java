@@ -1,7 +1,7 @@
 package com.quiz.service;
 
 import com.quiz.DB.*;
-import com.quiz.DB.dao.ResultDAO;
+import com.quiz.DB.dao.impl.ResultDAO;
 import com.quiz.entity.Result;
 import org.apache.log4j.Logger;
 
@@ -21,43 +21,43 @@ public class ResultService {
         this.factory = new MySqlDAOFactory();
     }
 
-    public void updateResult(int score, int userId, int testId, int duration) {
-        try (SqlConnection conn = factory.createConnection()) {
+    public void updateResult(Result result) {
+        try (DBConnection conn = factory.createConnection()) {
             ResultDAO resultDAO = factory.createResultDAO(conn);
-            resultDAO.updateResult(score, userId, testId, duration);
+            resultDAO.update(result);
         }
 
     }
 
-    public void insertResult(Result result) {
-        try (SqlConnection conn = factory.createConnection()) {
+    public boolean insertResult(Result result) {
+        try (DBConnection conn = factory.createConnection()) {
             ResultDAO resultDAO = factory.createResultDAO(conn);
-            resultDAO.insertResult(result);
+         return   resultDAO.create(result);
         }
     }
 
     public List<Result> getUserResultsWithPagination(int id, int page) {
-        try (SqlConnection conn = factory.createConnection()) {
+        try (DBConnection conn = factory.createConnection()) {
             ResultDAO resultDAO = factory.createResultDAO(conn);
             return resultDAO.getUserResults(id, (page - 1) * 5, "", "");
         }
     }
 
     public int getUserResultsCount(int id) {
-        try (SqlConnection conn = factory.createConnection()) {
+        try (DBConnection conn = factory.createConnection()) {
             ResultDAO resultDAO = factory.createResultDAO(conn);
             return resultDAO.getUserResultsCount(id);
         }
     }
     public Result getUserResultById(int id) {
-        try (SqlConnection conn = factory.createConnection()) {
+        try (DBConnection conn = factory.createConnection()) {
             ResultDAO resultDAO = factory.createResultDAO(conn);
             return resultDAO.getResultByUserId(id);
         }
     }
     @Sort(type = "order by", param = "result.score")
     public List<Result> getUserResultsWithPaginationByScore(int id, int page) {
-        try (SqlConnection conn = factory.createConnection()) {
+        try (DBConnection conn = factory.createConnection()) {
             ResultDAO resultDAO = factory.createResultDAO(conn);
             try {
                 Sort sortAnnotation =
@@ -73,7 +73,7 @@ public class ResultService {
 
     @Sort(type = "order by", param = "result.start_date")
     public List<Result> getUserResultsWithPaginationByDate(int id, int page) {
-        try (SqlConnection conn = factory.createConnection()) {
+        try (DBConnection conn = factory.createConnection()) {
             ResultDAO resultDAO = factory.createResultDAO(conn);
             try {
                 Sort sortAnnotation =
@@ -89,7 +89,7 @@ public class ResultService {
 
     @Sort(type = "order by", param = "t.name")
     public List<Result> getUserResultsWithPaginationByTopic(int id, int page) {
-        try (SqlConnection conn = factory.createConnection()) {
+        try (DBConnection conn = factory.createConnection()) {
             ResultDAO resultDAO = factory.createResultDAO(conn);
             try {
                 Sort sortAnnotation =
@@ -105,7 +105,7 @@ public class ResultService {
 
     @Sort(type = "order by", param = "q.header")
     public List<Result> getUserResultsWithPaginationByQuiz(int id, int page) {
-        try (SqlConnection conn = factory.createConnection()) {
+        try (DBConnection conn = factory.createConnection()) {
             ResultDAO resultDAO = factory.createResultDAO(conn);
             try {
                 Sort sortAnnotation =

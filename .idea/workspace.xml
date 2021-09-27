@@ -9,151 +9,231 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e8efcd3-c4b8-4e6d-8b5b-803e871fb352" name="Changes" comment="alpha_version">
-      <change afterPath="$PROJECT_DIR$/.idea/resourceBundles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/QuizDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/CreateTestCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/EditQuizCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/SaveQuizCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/filters/AdminAuthorizationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/utils/ErrorMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/language_en.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/language_ua.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Quiz_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Quiz_war_exploded.xml" afterDir="false" />
+    <list default="true" id="7e8efcd3-c4b8-4e6d-8b5b-803e871fb352" name="Changes" comment="beta_version">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/interfaces/IAbstractDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/quiz/exceptions/user/NoSuchUserException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/images/user.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/DBManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/TestDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/TopicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/TopicDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/BlockUserCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ChangeLanguageCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/CommandHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/CommandHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/EditPersonalInfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/EditPersonalInfoCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ErrorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ErrorCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/FinishQuizCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/FinishQuizCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/HomeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/HomeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoadEditPersonalInfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoadEditPersonalInfoCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoadRegisterPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoadRegisterPageCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoginCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LogoutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LogoutCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/PaginationCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ProfileCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ProfileCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/RegisterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ResultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ResultCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ShowUsersCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ShowUsersCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/StartTestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/StartTestCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/filters/AuthFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/filters/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/filters/EncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/utils/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/controller/utils/Pages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/DBConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/DBConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/MySqlDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/MySqlDAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/SqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/AbstractDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/AnswerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/impl/AnswerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/QuestionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/impl/QuestionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/QuizDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/impl/QuizDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/ResultDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/impl/ResultDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/RoleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/impl/RoleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/TopicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/impl/TopicDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/CommandHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/CommandHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/CreateTestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/quiz/CreateTestCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/EditPersonalInfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/user/EditPersonalInfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/EditQuizCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/quiz/EditQuizCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ErrorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/ErrorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/FinishQuizCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/quiz/FinishQuizCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/HomeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/HomeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoadEditPersonalInfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/user/LoadEditPersonalInfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoadLoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/authentication/ShowLoginCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoadRegisterPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/authentication/ShowRegisterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/authentication/LoginCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/LogoutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/authentication/LogoutCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/POSTEditQuizCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/quiz/POSTEditQuizCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ProfileCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/user/ProfileCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/authentication/RegisterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ResultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/user/ResultCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/SaveQuizCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/quiz/SaveQuizCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ShowQuizResultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/quiz/ShowQuizResultCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/ShowUsersCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/user/ShowUsersCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/command/StartTestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/command/quiz/StartTestCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/filters/AdminAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/filters/AdminAuthorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/filters/AuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/filters/AuthorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/filters/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/filters/EncodingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/filters/LocalizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/filters/LocalizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/listener/SessionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/listener/SessionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/utils/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/utils/Encryptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/utils/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/utils/ErrorMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/utils/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/utils/Pages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/utils/WebPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/utils/WebPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/controller/validator/ValidationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/validator/ValidationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/entity/Quiz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/service/QuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/service/QuizService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/service/ResultService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/service/ResultService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/service/TopicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/quiz/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/quiz/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/language.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/language.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/language_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/language_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/language_ua.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/language_ua.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editTest.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editTest.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list_users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list_users.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/quiz_result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/quiz_result.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/result.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/template/header.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/template/header.jspf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/template/header.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/template/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test_create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test_create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/frontend/css/error.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontend/css/error.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/frontend/css/list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontend/css/list.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/frontend/css/login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontend/css/login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/frontend/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontend/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/frontend/css/table.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontend/css/table.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/frontend/css/test.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontend/css/test.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/DBManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/TestDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/TestDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/TopicDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/TopicDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/BlockUserCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ChangeLanguageCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/Command.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/CommandHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/CommandHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/EditPersonalInfoCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/EditPersonalInfoCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ErrorCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ErrorCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/FinishQuizCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/FinishQuizCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/HomeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/HomeCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoadEditPersonalInfoCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoadEditPersonalInfoCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoadRegisterPageCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoadRegisterPageCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoginCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoginCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LogoutCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LogoutCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/PaginationCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ProfileCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ProfileCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/RegisterCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/RegisterCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ResultCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ResultCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ShowUsersCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ShowUsersCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/StartTestCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/StartTestCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/filters/EncodingFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/filters/EncodingFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/utils/Pages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/utils/Pages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/DAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/DBConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/DBConnectionPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/MySqlDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/MySqlDAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/SqlConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/AbstractDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/AnswerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/QuestionDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/QuizDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/ResultDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/RoleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/TopicDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/DB/dao/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/CommandFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/CommandHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/CreateTestCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/EditPersonalInfoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/EditQuizCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ErrorCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/FinishQuizCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/HomeCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoadEditPersonalInfoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoadLoginCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoadRegisterPageCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LoginCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/LogoutCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/POSTEditQuizCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ProfileCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/RegisterCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ResultCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/SaveQuizCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ShowQuizResultCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/ShowUsersCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/command/StartTestCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/filters/AdminAuthorizationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/filters/AuthorizationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/filters/EncodingFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/filters/LocalizationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/listener/SessionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/utils/Encryptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/utils/ErrorMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/utils/Pages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/utils/WebPath$DispatchType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/utils/WebPath$WebPageEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/utils/WebPath.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/controller/validator/ValidationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Quiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Result.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/service/QuizService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/service/QuizService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/service/ResultService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/service/ResultService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/service/TopicService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/service/TopicService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/com/quiz/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/language.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/language.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/language_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/language_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/language_ua.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/classes/language_ua.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/editTest.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/editTest.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/error.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/list_users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/list_users.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/profile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/quiz_result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/quiz_result.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/result.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/template/header.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/template/header.jspf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/template/header.jspf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/test_create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/test_create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/user_info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/pages/user_info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/error.scss" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/error.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/list.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/js/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/images/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/table.scss" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/table.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/test.scss" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/frontend/css/test.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quiz-1.0-SNAPSHOT/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/DBManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/TestDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/TopicDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/TopicDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/BlockUserCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ChangeLanguageCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/Command.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/CommandHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/CommandHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/EditPersonalInfoCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/EditPersonalInfoCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ErrorCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ErrorCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/FinishQuizCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/FinishQuizCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/HomeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/HomeCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoadEditPersonalInfoCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoadEditPersonalInfoCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoadRegisterPageCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoadRegisterPageCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoginCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoginCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LogoutCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LogoutCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/PaginationCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ProfileCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ProfileCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/RegisterCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/RegisterCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ResultCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ResultCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ShowUsersCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ShowUsersCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/StartTestCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/StartTestCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/filters/EncodingFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/filters/EncodingFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/utils/Pages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/controller/utils/Pages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/entity/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/entity/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/DB/DAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/DBConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/DB/DBConnectionPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/MySqlDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/DB/MySqlDAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/SqlConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/AbstractDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/AnswerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/QuestionDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/QuizDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/ResultDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/RoleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/TopicDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/DB/dao/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/CommandFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/CommandHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/CreateTestCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/EditPersonalInfoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/EditQuizCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ErrorCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/FinishQuizCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/HomeCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoadEditPersonalInfoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoadLoginCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoadRegisterPageCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LoginCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/LogoutCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/POSTEditQuizCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ProfileCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/RegisterCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ResultCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/SaveQuizCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ShowQuizResultCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/ShowUsersCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/command/StartTestCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/filters/AdminAuthorizationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/filters/AuthorizationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/filters/EncodingFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/filters/LocalizationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/listener/SessionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/utils/Encryptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/utils/ErrorMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/utils/Pages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/utils/WebPath$DispatchType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/utils/WebPath$WebPageEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/utils/WebPath.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/controller/validator/ValidationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/entity/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/entity/Quiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/entity/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/entity/Result.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/entity/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/entity/Test.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/service/QuizService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/service/QuizService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/service/ResultService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/service/ResultService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/service/TopicService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/service/TopicService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/quiz/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/quiz/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/language.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/language.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/language_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/language_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/language_ua.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/language_ua.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,11 +249,11 @@
         <option value="Enum" />
         <option value="jsf" />
         <option value="JavaScript File" />
-        <option value="SCSS File" />
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="SCSS File" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -215,100 +295,111 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/quiz" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/quiz/web/command/authentication" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.quiz.exceptions.user" />
+      <recent name="com.quiz.web.command.user" />
       <recent name="com.quiz.DB.dao" />
       <recent name="com.quiz.controller.command" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\java\com\quiz\web\command\authentication" />
+      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\java\com\quiz\web\command" />
+      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\java\com\quiz\web\command\authentication " />
       <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\java\com\quiz" />
       <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\resources" />
-      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\java\com\quiz\DB" />
-      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\webapp\frontend" />
-      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\webapp\frontend\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\webapp\WEB-INF\pages\tags" />
       <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\target\Quiz-1.0-SNAPSHOT\frontend\images" />
       <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\target\Quiz-1.0-SNAPSHOT\frontend" />
       <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\target\Quiz-1.0-SNAPSHOT" />
-      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\resources" />
-      <recent name="C:\Users\Oleksandr\AppData\Local\Temp\Quiz\src\main\webapp\WEB-INF\pages" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.quiz.web.command.user" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.quiz.DB" />
       <recent name="com.quiz.DB.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.10">
-    <configuration name="DBManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.quiz.DB.DBManager" />
+  <component name="RunManager" selected="JUnit.QuizDAOTest.getTrueIfQuizCreated">
+    <configuration name="All in Quiz" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Quiz" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.quiz.DB.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Quiz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.quiz.entity.Quiz" />
+    <configuration name="AnswerDAOTest.createAnswerWithWrongQuestionIdAndGetExceptions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Quiz" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.quiz.entity.*" />
+          <option name="PATTERN" value="com.quiz.DB.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.quiz.DB.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.quiz.DB.dao.AnswerDAOTest" />
+      <option name="METHOD_NAME" value="createAnswerWithWrongQuestionIdAndGetExceptions" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuizDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.quiz.DB.dao.QuizDAO" />
+    <configuration name="QuizDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Quiz" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.quiz.DB.*" />
+          <option name="PATTERN" value="com.quiz.DB.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.quiz.DB.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.quiz.DB.dao.QuizDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TopicDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.quiz.DB.dao.TopicDAO" />
+    <configuration name="QuizDAOTest.createQuizWithWrongDifficultAndGetException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Quiz" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.quiz.DB.*" />
+          <option name="PATTERN" value="com.quiz.DB.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.quiz.DB.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.quiz.DB.dao.QuizDAOTest" />
+      <option name="METHOD_NAME" value="createQuizWithWrongDifficultAndGetException" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.quiz.DB.dao.UserDAO" />
+    <configuration name="QuizDAOTest.getTrueIfQuizCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Quiz" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.quiz.DB.*" />
+          <option name="PATTERN" value="com.quiz.DB.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.quiz.DB.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.quiz.DB.dao.QuizDAOTest" />
+      <option name="METHOD_NAME" value="getTrueIfQuizCreated" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -402,20 +493,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DBManager" />
-      <item itemvalue="Application.TopicDAO" />
-      <item itemvalue="Application.UserDAO" />
-      <item itemvalue="Application.QuizDAO" />
-      <item itemvalue="Application.Quiz" />
+      <item itemvalue="JUnit.All in Quiz" />
+      <item itemvalue="JUnit.AnswerDAOTest.createAnswerWithWrongQuestionIdAndGetExceptions" />
+      <item itemvalue="JUnit.QuizDAOTest.getTrueIfQuizCreated" />
+      <item itemvalue="JUnit.QuizDAOTest.createQuizWithWrongDifficultAndGetException" />
+      <item itemvalue="JUnit.QuizDAOTest" />
       <item itemvalue="Tomcat Server.Tomcat 10.0.10" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserDAO" />
-        <item itemvalue="Application.TopicDAO" />
-        <item itemvalue="Application.Quiz" />
-        <item itemvalue="Application.QuizDAO" />
-        <item itemvalue="Application.DBManager" />
+        <item itemvalue="JUnit.QuizDAOTest.getTrueIfQuizCreated" />
+        <item itemvalue="JUnit.QuizDAOTest" />
+        <item itemvalue="JUnit.QuizDAOTest.createQuizWithWrongDifficultAndGetException" />
+        <item itemvalue="JUnit.All in Quiz" />
+        <item itemvalue="JUnit.AnswerDAOTest.createAnswerWithWrongQuestionIdAndGetExceptions" />
       </list>
     </recent_temporary>
   </component>
@@ -480,6 +571,21 @@
       <workItem from="1631993825421" duration="18237000" />
       <workItem from="1632057691214" duration="6052000" />
       <workItem from="1632092987534" duration="2229000" />
+      <workItem from="1632148859303" duration="2331000" />
+      <workItem from="1632157130433" duration="5748000" />
+      <workItem from="1632263563728" duration="80000" />
+      <workItem from="1632314484124" duration="2495000" />
+      <workItem from="1632340641413" duration="7000" />
+      <workItem from="1632434787204" duration="4583000" />
+      <workItem from="1632492414369" duration="9285000" />
+      <workItem from="1632581712970" duration="14326000" />
+      <workItem from="1632605576401" duration="12676000" />
+      <workItem from="1632656065000" duration="7477000" />
+      <workItem from="1632668583582" duration="1694000" />
+      <workItem from="1632672204710" duration="26624000" />
+      <workItem from="1632749040371" duration="325000" />
+      <workItem from="1632749388707" duration="2745000" />
+      <workItem from="1632759395747" duration="1822000" />
     </task>
     <task id="LOCAL-00001" summary="alpha_version">
       <created>1631289404746</created>
@@ -502,7 +608,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631289969485</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="beta_version">
+      <created>1632149008154</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1632149008154</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,9 +646,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="alpha_version" />
-    <option name="LAST_COMMIT_MESSAGE" value="alpha_version" />
+    <MESSAGE value="beta_version" />
+    <option name="LAST_COMMIT_MESSAGE" value="beta_version" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/quiz/DB/dao/impl/QuizDAO.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.util.concurrent.ConcurrentHashMap$MapEntry" memberName="value" />
@@ -549,6 +672,13 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Quiz$Tomcat_10_0_10.ic" NAME="Tomcat 10.0.10 Coverage Results" MODIFIED="1631621084187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Quiz$CommandFactoryTest_defineCommandByUnknownUrlAndGetErrorCommandPOSTMethod.ic" NAME="CommandFactoryTest.defineCommandByUnknownUrlAndGetErrorCommandPOSTMethod Coverage Results" MODIFIED="1632690578311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.quiz.web.command.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Quiz$All_in_Quiz.ic" NAME="All in Quiz Coverage Results" MODIFIED="1632702889611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Quiz$QuizDAOTest_updateQuizWithUsedHeaderAndGetException.ic" NAME="QuizDAOTest.updateQuizWithUsedHeaderAndGetException Coverage Results" MODIFIED="1632696258311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.quiz.DB.dao.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Quiz$Tomcat_10_0_10.ic" NAME="Tomcat 10.0.10 Coverage Results" MODIFIED="1632698421067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

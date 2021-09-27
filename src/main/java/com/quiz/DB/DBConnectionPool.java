@@ -14,8 +14,8 @@ import java.util.Properties;
  * using Apache Commons connection pooling resources
  */
 public class DBConnectionPool {
-    private static BasicDataSource ds = new BasicDataSource();
-    private static Properties property = new Properties();
+    private static final BasicDataSource ds = new BasicDataSource();
+    private static final Properties property = new Properties();
     public static final Logger logger;
 
     static {
@@ -29,7 +29,7 @@ public class DBConnectionPool {
             fis = new FileInputStream("C:\\Users\\Oleksandr\\AppData\\Local\\Temp\\Quiz\\src\\main\\resources\\database.properties");
             property.load(fis);
             ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            ds.setUrl(property.getProperty("db.host"));
+            ds.setUrl(property.getProperty("db.url"));
             ds.setUsername(property.getProperty("db.user"));
             ds.setPassword(property.getProperty("db.password"));
         } catch (IOException e) {

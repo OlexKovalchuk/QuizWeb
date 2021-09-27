@@ -3,15 +3,15 @@ package com.quiz.service;
 import com.quiz.DB.DAOFactory;
 import com.quiz.DB.LogConfigurator;
 import com.quiz.DB.MySqlDAOFactory;
-import com.quiz.DB.SqlConnection;
-import com.quiz.DB.dao.TopicDAO;
+import com.quiz.DB.DBConnection;
+import com.quiz.DB.dao.impl.TopicDAO;
 import com.quiz.entity.Topic;
 import org.apache.log4j.Logger;
 
 import java.util.List;
 
 public class TopicService {
-    private DAOFactory factory;
+    private final DAOFactory factory;
     private final static Logger logger;
 
     //logger configuration
@@ -25,30 +25,30 @@ public class TopicService {
 
 
     public List<Topic> getAllTopics() {
-        try (SqlConnection conn = factory.createConnection()) {
+        try (DBConnection conn = factory.createConnection()) {
             TopicDAO topicDAO = factory.createTopicDAO(conn);
-            return topicDAO.getAllTopics();
+            return topicDAO.findAll();
         }
     }
 
-    public void insertTopic(String name) {
-        try (SqlConnection conn = factory.createConnection()) {
+    public boolean insertTopic(Topic topic) {
+        try (DBConnection conn = factory.createConnection()) {
             TopicDAO topicDAO = factory.createTopicDAO(conn);
-            topicDAO.insertTopic(name);
+         return topicDAO.create(topic);
         }
     }
 
-    public String getTopicById(int id) {
-        try (SqlConnection conn = factory.createConnection()) {
+    public Topic getTopicById(int id) {
+        try (DBConnection conn = factory.createConnection()) {
             TopicDAO topicDAO = factory.createTopicDAO(conn);
-            return topicDAO.getTopicName(id);
+            return topicDAO.findById(id);
         }
     }
 
-    public void deleteTopic(int id) {
-        try (SqlConnection conn = factory.createConnection()) {
+    public boolean deleteTopic(int id) {
+        try (DBConnection conn = factory.createConnection()) {
             TopicDAO topicDAO = factory.createTopicDAO(conn);
-            topicDAO.deleteTopic(id);
+          return   topicDAO.delete(id);
         }
     }
 
