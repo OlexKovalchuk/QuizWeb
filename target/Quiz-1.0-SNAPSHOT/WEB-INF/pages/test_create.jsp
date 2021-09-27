@@ -1,8 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %><%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <fmt:setLocale value="${sessionScope.lang}"/>
-<fmt:setBundle basename="language"/>
+<fmt:setBundle basename="language"/><%@page import="com.quiz.service.QuizService"%>
+
 <!DOCTYPE html>
 <html lang="java">
 
@@ -14,8 +15,7 @@
         <%@ include file="/frontend/css/style.css" %>
     </style>
 </head>
-<body>
-<%@include file="/WEB-INF/pages/template/header.jspf" %>
+<t:page title="Quiz create">
 <div class="container">
 
     <form onsubmit="return handleData();" id="createForm" class="modal-content animate"
@@ -143,5 +143,5 @@
         return true;
     }
 </script>
-</body>
+</t:page>
 </html>
