@@ -9,24 +9,20 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Database connection pool with DataSource,
- * using Apache Commons connection pooling resources
- */
+
 public class DBConnectionPool {
     private static final BasicDataSource ds = new BasicDataSource();
     private static final Properties property = new Properties();
-    public static final Logger logger;
+    private static final String DATABASE_PROPERTY_LOCATION = "C:\\Users\\Oleksandr\\AppData\\Local\\Temp\\Quiz\\src" +
+            "\\main\\resources\\database.properties";
+    public static final Logger logger = Logger.getLogger(DBConnectionPool.class);
 
+
+    //Setting BasicDataSource properties
     static {
-        logger = LogConfigurator.getLogger(DBConnectionPool.class);
-    }
-
-
-    static {
-        FileInputStream fis =null;
+        FileInputStream fis = null;
         try {
-            fis = new FileInputStream("C:\\Users\\Oleksandr\\AppData\\Local\\Temp\\Quiz\\src\\main\\resources\\database.properties");
+            fis = new FileInputStream(DATABASE_PROPERTY_LOCATION);
             property.load(fis);
             ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
             ds.setUrl(property.getProperty("db.url"));
@@ -34,8 +30,8 @@ public class DBConnectionPool {
             ds.setPassword(property.getProperty("db.password"));
         } catch (IOException e) {
             logger.error(e.getMessage());
-        }finally {
-            if(fis!=null) {
+        } finally {
+            if (fis != null) {
                 try {
                     fis.close();
                 } catch (IOException e) {
@@ -45,10 +41,9 @@ public class DBConnectionPool {
         }
     }
 
-    private DBConnectionPool(){}
+    private DBConnectionPool() {
+    }
 
-    /*No need for synchronization, because BasicDataSource takes care
-    * of staff of this king*/
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
     }

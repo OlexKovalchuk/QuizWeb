@@ -15,7 +15,7 @@
     </style>
 
 </head>
-<t:page title="Quiz">
+<t:header >
     <div class="container" style="margin: 20px">
         <span id="remainingTime"
               style="position: fixed;top:90px;left: 80%;font-size: 23px;background: rgba(255,0,77,0.38);border-radius: 5px;padding: 10px;box-shadow: 2px -2px 6px 0px;">
@@ -66,5 +66,5 @@
             }
         }
     </script>
-</t:page>
+</t:header>
 </html>

@@ -14,7 +14,7 @@
         <%@ include file="/frontend/css/style.css" %>
     </style>
 </head>
-<t:page title="Login">
+<t:header >
     <form class="modal-content animate" action="${pageContext.request.contextPath}/login" method="post">
         <div class="container">
             <label><b><fmt:message key="msg.email"/></b></label>
@@ -37,5 +37,5 @@
             <a href="${pageContext.request.contextPath}/register"><fmt:message key="msg.register"/></a></span>
         </div>
     </form>
-</t:page>
+</t:header>
 </html>

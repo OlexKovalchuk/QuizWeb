@@ -10,11 +10,11 @@
     <style>
         <%@include file="/frontend/css/user_table.scss" %>
         <%@include file="/frontend/css/style.css" %>
+        <%@include file="/frontend/css/pagination.scss" %>
     </style>
 </head>
-<t:page title="Profile">
+<t:header >
     <div class="container">
-
         <form action="${pageContext.request.contextPath}/profile/users" method="get">
             <label for="plan" href="">Sort by</label><select name="sort" id="plan">
             <option
@@ -23,7 +23,7 @@
             </option>
             <option
                     <c:if test="${requestScope.sort.equals('score')}">selected</c:if> value="score"><fmt:message
-                    key="msg.date"/>
+                    key="msg.score"/>
             </option>
             <option
                     <c:if test="${requestScope.sort.equals('block')}">selected</c:if> value="block"><fmt:message
@@ -75,10 +75,7 @@
                 <div class="pagination">
                     <a href="#">&laquo;</a>
                     <c:forEach var="i" begin="1" end="${requestScope.pagesCount}">
-                        <c:if test="${requestScope.page==i}"><input type="hidden" name="page" value="${i}" </c:if>
-                        <a
-                                <c:if test="${requestScope.page==i}">class="active"</c:if>
-
+                        <a <c:if test="${requestScope.page==i}">class="active"</c:if>
                                 onclick="location.href=getLink(${i});">${i}</a>
                     </c:forEach>
                     <a href="#">&raquo;</a>
@@ -86,12 +83,11 @@
             </div>
         </form>
     </div>
-
     <script>
         function getLink(page) {
             var sort = document.getElementById('plan');
             return '${pageContext.request.contextPath}/profile/users?sort=' + sort.value + '&page=' + page;
         }
     </script>
-</t:page>
+</t:header>
 </html>

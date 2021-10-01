@@ -47,7 +47,6 @@ public class Question {
 
     public boolean isCorrect(String[] answersArray) {
         List<String> answersList = Arrays.asList(answersArray);
-        System.out.println(answersList);
         for (int i = 0; i < answers.size(); i++) {
             if ((answers.get(i).getAnswer() == 1 && !answersList.contains(Integer.toString(i))) || (answers.get(i).getAnswer() == 0 && answersList.contains(Integer.toString(i)))) {
                 return false;

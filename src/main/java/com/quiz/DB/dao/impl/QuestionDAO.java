@@ -1,9 +1,8 @@
 package com.quiz.DB.dao.impl;
 
 import com.quiz.DB.DAOFactory;
-import com.quiz.DB.LogConfigurator;
-import com.quiz.DB.MySqlDAOFactory;
 import com.quiz.DB.DBConnection;
+import com.quiz.DB.MySqlDAOFactory;
 import com.quiz.DB.dao.interfaces.IQuestionDAO;
 import com.quiz.entity.Question;
 import com.quiz.exceptions.UnsuccessfulQueryException;
@@ -16,7 +15,8 @@ import java.util.List;
 import static com.quiz.DB.DBConnection.closeResultSet;
 
 public class QuestionDAO extends AbstractDAO<Question> implements IQuestionDAO {
-    private final static Logger logger;
+    public static final Logger logger = Logger.getLogger(QuestionDAO.class);
+
 
     public QuestionDAO(Connection connection) {
         super(connection);
@@ -79,21 +79,8 @@ public class QuestionDAO extends AbstractDAO<Question> implements IQuestionDAO {
         return question;
     }
 
-    static {
-        logger = LogConfigurator.getLogger(QuizDAO.class);
-    }
 
-    public void deleteAllQuestionsByQuizId(int id) {
-        try (PreparedStatement statement = connection.prepareStatement("Delete  from question where quiz_id=?")) {
-            statement.setInt(1, id);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            logger.error(e.getMessage());
-            throw new UnsuccessfulQueryException();
-        }
-
-    }
-
+    @Override
     public List<Question> getQuestionsByQuizId(int quizID) throws UnsuccessfulQueryException {
         List<Question> questions = new ArrayList<>();
         ResultSet resultSet = null;
@@ -122,14 +109,15 @@ public class QuestionDAO extends AbstractDAO<Question> implements IQuestionDAO {
         return questions;
     }
 
+    @Override
     public boolean insertQuestions(List<Question> questions, int quizId) {
-        int changes =0;
+        int changes = 0;
         try (PreparedStatement statement = connection.prepareStatement("INSERT INTO question (quiz_id, " +
                 "description) values (?,?)", Statement.RETURN_GENERATED_KEYS)) {
             for (Question question : questions) {
                 statement.setInt(1, quizId);
                 statement.setString(2, question.getDescription());
-                changes= statement.executeUpdate();
+                changes = statement.executeUpdate();
                 try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
                         question.setId(generatedKeys.getInt(1));
@@ -148,25 +136,4 @@ public class QuestionDAO extends AbstractDAO<Question> implements IQuestionDAO {
         return changes > 0;
     }
 
-    public void addQuestion(Question question) {
-        try (PreparedStatement statement = connection.prepareStatement("INSERT INTO question (quiz_id, " +
-                "description) values (?,?)", Statement.RETURN_GENERATED_KEYS)) {
-            statement.setInt(1, question.getTestId());
-            statement.setString(2, question.getDescription());
-            statement.executeUpdate();
-            try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    question.setId(generatedKeys.getInt(1));
-                }
-            }
-            DAOFactory factory = new MySqlDAOFactory();
-            try (DBConnection conn = factory.createConnection()) {
-                AnswerDAO answerDAO = factory.createAnswerDAO(conn);
-                answerDAO.insertAnswers(question.getAnswers(), question.getId());
-            }
-        } catch (SQLException e) {
-            logger.error(e.getMessage());
-            throw new UnsuccessfulQueryException();
-        }
-    }
 }

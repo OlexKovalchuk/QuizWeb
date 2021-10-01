@@ -1,6 +1,7 @@
 package com.quiz.web.command.user;
 
 import com.quiz.web.command.Command;
+import com.quiz.web.utils.Pageable;
 import com.quiz.web.utils.Pages;
 import com.quiz.web.utils.WebPath;
 import com.quiz.entity.Result;
@@ -21,42 +22,19 @@ public class ResultCommand implements Command {
         List<Result> results = null;
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
+        Pageable pageable = new Pageable.Builder()
+                .page(request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1)
+                .size(5)
+                .sort(request.getParameter("sort") != null ? request.getParameter("sort") : "score")
+                .ASC()
+                .build();
         ResultService resultService = new ResultService();
-        String sort = request.getParameter("sort");
-        int page = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
-        if (sort != null) {
-            switch (sort) {
-                case "topic":
-                    results = resultService.getUserResultsWithPaginationByTopic(user.getId(),
-                            page);
-                    break;
-                case "score":
-                    results = resultService.getUserResultsWithPaginationByScore(user.getId(),
-                            page);
-                    break;
-                case "date":
-                    results = resultService.getUserResultsWithPaginationByDate(user.getId(),
-                            page);
-                    break;
-                case "quiz":
-                    results = resultService.getUserResultsWithPaginationByQuiz(user.getId(),
-                            page);
-                    break;
-                default:
-                    results = resultService.getUserResultsWithPagination(user.getId(), page);
-                    break;
 
-            }
-        } else {
-            results = resultService.getUserResultsWithPagination(user.getId(), page);
-        }
-        request.setAttribute("sort",sort);
-        request.setAttribute("page",page);
+        request.setAttribute("sort", pageable.getSort());
+        request.setAttribute("page", pageable.getPage());
         request.setAttribute("pagesCount", (int) Math.ceil(resultService.getUserResultsCount(user.getId()) / 5.0));
+        request.setAttribute("userResults", resultService.getUserResultsById(user.getId(),pageable));
 
-        request.setAttribute("userResults", results);
         return new WebPath(Pages.RESULT, WebPath.DispatchType.FORWARD);
-
     }
-
 }

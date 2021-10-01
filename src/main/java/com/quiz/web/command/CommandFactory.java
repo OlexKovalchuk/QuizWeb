@@ -2,17 +2,20 @@ package com.quiz.web.command;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpServletResponseWrapper;
 
+/**
+ * CommandFactory processing HttpServletRequest and has method that return Command entity due to the request params
+ */
 public class CommandFactory {
-    private HttpServletRequest request;
-    private HttpServletResponse response;
-    public CommandFactory(HttpServletRequest request, HttpServletResponse response) {
+    private final HttpServletRequest request;
+    public CommandFactory(HttpServletRequest request) {
         this.request = new HttpServletRequestWrapper(request);
-        this.response = new HttpServletResponseWrapper(response);
     }
 
+    /**
+     * Defines command due to the request URL
+     * @return Command entity
+     */
     public Command defineCommand() {
         if(request.getMethod().equals("GET")){
             return CommandHolder.get(getActionUrl());

@@ -1,19 +1,23 @@
 package com.quiz.DB.dao.impl;
 
-import com.quiz.DB.LogConfigurator;
 import com.quiz.DB.dao.interfaces.IResultDAO;
 import com.quiz.entity.Result;
 import com.quiz.exceptions.UnsuccessfulQueryException;
+import com.quiz.web.utils.Pageable;
 import org.apache.log4j.Logger;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.quiz.DB.DBConnection.closeResultSet;
 
 public class ResultDAO extends AbstractDAO<Result> implements IResultDAO {
-    private final static Logger logger;
+    public static final Logger logger =Logger.getLogger(ResultDAO.class);
+
 
     public ResultDAO(Connection connection) {
         super(connection);
@@ -91,9 +95,8 @@ public class ResultDAO extends AbstractDAO<Result> implements IResultDAO {
 
     }
 
-    static {
-        logger = LogConfigurator.getLogger(ResultDAO.class);
-    }
+
+    @Override
 
     public Result getResultByUserId(int id) {
         ResultSet resultSet = null;
@@ -120,6 +123,7 @@ public class ResultDAO extends AbstractDAO<Result> implements IResultDAO {
         return result;
 
     }
+    @Override
 
     public int getUserResultsCount(int id) {
         ResultSet resultSet = null;
@@ -139,49 +143,22 @@ public class ResultDAO extends AbstractDAO<Result> implements IResultDAO {
         return count;
     }
 
-    public void updateResult(int score, int userId, int testId) {
-        ResultSet resultSet = null;
-        try (PreparedStatement statement = connection.prepareStatement("UPDATE result SET score=?, " +
-                "complete_date=NOW" +
-                "() " +
-                "where result.id=(Select  last_insert_id()  where user_id=? and quiz_id=? ) ")) {
-            statement.setInt(1, score);
-            statement.setInt(2, userId);
-            statement.setInt(3, testId);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            logger.error(e.getMessage());
-            throw new UnsuccessfulQueryException();
-        }
 
-    }
 
-    public void insertResult(Result result) {
-        try (
-                PreparedStatement statement = connection.prepareStatement("insert into result(user_id,quiz_id," +
-                        "start_date,score,complete_date) values (?,?,NOW(),?,NOW())")) {
-            statement.setInt(1, result.getUserId());
-            statement.setInt(2, result.getTestId());
-            statement.setInt(3, result.getScore());
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            logger.error(e.getMessage());
-            throw new UnsuccessfulQueryException();
-        }
-    }
 
-    public List<Result> getUserResults(int id, int offset, String type, String param) {
+    @Override
+
+    public List<Result> getUserResults(int id, Pageable pageable) {
         List<Result> results = new ArrayList<>();
         String sql = "Select result.score,t.name as name,q.header as header,result.start_date,result.complete_date " +
                 "from result join quiz q on result.quiz_id = q.id  " +
                 "join topic t on q.topic_id=t.id " +
-                " where user_id=?  " + type + " " + param + " limit 5 " +
-                "offset ?";
+                " where user_id=?  " + pageable.getSortWithOrder()  + " limit "+pageable.getSize() +
+                " offset "+pageable.getOffset();
         ResultSet resultSet = null;
         try (PreparedStatement statement = connection.prepareStatement(sql)
         ) {
             statement.setInt(1, id);
-            statement.setInt(2, offset);
             resultSet = statement.executeQuery();
             Result result;
             while (resultSet.next()) {

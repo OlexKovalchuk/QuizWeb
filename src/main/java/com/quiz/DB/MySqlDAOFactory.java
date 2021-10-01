@@ -2,10 +2,7 @@ package com.quiz.DB;
 
 import com.quiz.DB.dao.impl.*;
 
-/**
- * The concrete implementation of the DAOFactory
- * for the MySQL relational database
- */
+
 public class MySqlDAOFactory implements DAOFactory {
 
     @Override

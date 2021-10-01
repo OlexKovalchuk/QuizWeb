@@ -15,7 +15,7 @@
         <%@ include file="/frontend/css/style.css" %>
     </style>
 </head>
-<t:page title="Registration">
+<t:header >
 
     <form class="modal-content animate" action="${pageContext.request.contextPath}/register" method="post">
         <div class="container">
@@ -51,5 +51,5 @@
             <button type="submit"><fmt:message key="msg.register"/></button>
         </div>
     </form>
-</t:page>
+</t:header>
 </html>

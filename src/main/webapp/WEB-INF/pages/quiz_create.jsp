@@ -15,7 +15,7 @@
         <%@ include file="/frontend/css/style.css" %>
     </style>
 </head>
-<t:page title="Quiz create">
+<t:header >
 <div class="container">
 
     <form onsubmit="return handleData();" id="createForm" class="modal-content animate"
@@ -143,5 +143,5 @@
         return true;
     }
 </script>
-</t:page>
+</t:header>
 </html>

@@ -1,10 +1,10 @@
 package com.quiz.DB.dao.impl;
 
-import com.quiz.DB.LogConfigurator;
 import com.quiz.DB.dao.interfaces.IUserDAO;
 import com.quiz.entity.Role;
 import com.quiz.entity.User;
 import com.quiz.exceptions.UnsuccessfulQueryException;
+import com.quiz.web.utils.Pageable;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -17,7 +17,8 @@ import java.util.List;
 import static com.quiz.DB.DBConnection.closeResultSet;
 
 public class UserDAO extends AbstractDAO<User> implements IUserDAO {
-    private final static Logger logger;
+    public static final Logger logger =Logger.getLogger(UserDAO.class);
+
 
     public UserDAO(Connection connection) {
         super(connection);
@@ -35,8 +36,8 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
 
     @Override
     protected PreparedStatement getInsertEntityStatement() throws SQLException {
-        return connection.prepareStatement("Insert into  user (email,password, name, surname, block, create_date, " +
-                "role_id) values (?,?,?,?,?,NOW(),?)");
+        return connection.prepareStatement("Insert into  user (email,password, name, surname, create_date " +
+                ") values (?,?,?,?,NOW())");
 
     }
 
@@ -77,11 +78,9 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
     @Override
     protected void prepareStatementForInsert(PreparedStatement statement, User entity) throws SQLException {
         statement.setString(1, entity.getEmail());
-        statement.setString(2, entity.getName());
-        statement.setString(3, entity.getSurname());
-        statement.setString(4, entity.getPassword());
-        statement.setInt(5, entity.getBlock());
-        statement.setInt(6, entity.getRole().getId());
+        statement.setString(2, entity.getPassword());
+        statement.setString(3, entity.getName());
+        statement.setString(4, entity.getSurname());
     }
 
     @Override
@@ -97,11 +96,9 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
                 .build();
     }
 
-    static {
-        logger = LogConfigurator.getLogger(UserDAO.class);
-    }
 
-    public List<User> getAllUsers(int offset, String type, String param) {
+
+    public List<User> getAllUsers(int id, Pageable pageable) {
         ResultSet resultSet = null;
         String sql = "Select user.id,user.email,user.create_date,r" +
                 ".name as " +
@@ -109,11 +106,11 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
                 "AVG(res.score) as avgscore from user join role r on user.role_id = r.id left outer join result res " +
                 "on user" +
                 ".id= " +
-                "res.user_id group by user.id " + type + " " + param + " Limit 10 offset ? ;";
+                "res.user_id where user.id!=? group by user.id " + pageable.getSortWithOrder() + " Limit " + pageable.getSize() + " " +
+                "offset " + pageable.getOffset();
         List<User> users = new ArrayList<>();
         try (PreparedStatement statement = connection.prepareStatement(sql)
-        ) {
-            statement.setInt(1, offset);
+        ) {statement.setInt(1,id);
             resultSet = statement.executeQuery();
             User user;
             while (resultSet.next()) {
@@ -133,23 +130,6 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
             closeResultSet(resultSet);
         }
         return users;
-    }
-
-    public void insertUser(User user) {
-        try (PreparedStatement statement = connection.prepareStatement("insert into user(email,password,role_id,name," +
-                "surname) value (?,?,1,?,?,?)")
-        ) {
-            statement.setString(1, user.getEmail());
-            statement.setString(2, user.getPassword());
-            statement.setString(3, user.getRole().getRoleName());
-            statement.setString(4, user.getName());
-            statement.setString(5, user.getSurname());
-            statement.setDate(6, user.getCreationDate());
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            logger.error(e.getMessage());
-            throw new UnsuccessfulQueryException();
-        }
     }
 
     public int getUsersCount() {
@@ -197,33 +177,6 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
         return user;
     }
 
-    public User getUserById(int id) {
-        ResultSet resultSet = null;
-        User user = null;
-        try (PreparedStatement statement = connection.prepareStatement("Select user.id,user.password,user.email,user" +
-                ".role_id," +
-                " user.name, user.surname,user.block from user  where user.id=? ")
-        ) {
-            statement.setInt(1, id);
-            resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                user = new User();
-                user.setId(resultSet.getInt("id"));
-                user.setEmail(resultSet.getString("email"));
-                user.setPassword(resultSet.getString("password"));
-                user.setRole(Role.getRoleById(resultSet.getInt("role_id")));
-                user.setName(resultSet.getString("name"));
-                user.setSurname(resultSet.getString("surname"));
-                user.setBlock(resultSet.getInt("block"));
-                return user;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            closeResultSet(resultSet);
-        }
-        return user;
-    }
 
     public boolean blockUser(int id, int block) {
         int changes = 0;
@@ -257,35 +210,10 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
         return isExist;
     }
 
-    public void updateUser(User user) {
-        try (PreparedStatement statement = connection.prepareStatement("UPDATE user SET email=?, name=?," +
-                "surname=?," +
-                "password=? where id=?;")
-        ) {
-            statement.setString(1, user.getEmail());
-            statement.setString(2, user.getName());
-            statement.setString(3, user.getSurname());
-            statement.setString(4, user.getPassword());
-            statement.setInt(5, user.getId());
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public void deleteUserById(int id) {
-        try (PreparedStatement statement = connection.prepareStatement("DELETE FROM user where id=?; ")
-        ) {
-            statement.setInt(1, id);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            logger.error(e.getMessage());
-            throw new UnsuccessfulQueryException();
-        }
-    }
 
     public boolean updateUserInfo(User user) {
-        int changes =0;
+        int changes = 0;
         try (PreparedStatement statement = connection.prepareStatement("UPDATE user SET  name=?," +
                 "surname=?," +
                 "role_id=? where user.id=?;")
@@ -294,11 +222,11 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
             statement.setString(2, user.getSurname());
             statement.setInt(3, user.getRole().getId());
             statement.setInt(4, user.getId());
-          changes =  statement.executeUpdate();
+            changes = statement.executeUpdate();
         } catch (SQLException e) {
             logger.error(e.getMessage());
             throw new UnsuccessfulQueryException();
         }
-        return changes>0;
+        return changes > 0;
     }
 }

@@ -12,7 +12,7 @@
         <%@include file="/frontend/css/style.css" %>
     </style>
 </head>
-<t:page title="Error">
+<t:header >
 <div class="container">
     <section class="page_404">
         <div class="container">
@@ -35,5 +35,5 @@
         </div>
     </section>
 </div>
-</t:page>
+</t:header>
 </html>

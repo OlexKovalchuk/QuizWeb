@@ -1,9 +1,8 @@
 package com.quiz.service;
 
 import com.quiz.DB.DAOFactory;
-import com.quiz.DB.LogConfigurator;
-import com.quiz.DB.MySqlDAOFactory;
 import com.quiz.DB.DBConnection;
+import com.quiz.DB.MySqlDAOFactory;
 import com.quiz.DB.dao.impl.TopicDAO;
 import com.quiz.entity.Topic;
 import org.apache.log4j.Logger;
@@ -12,12 +11,8 @@ import java.util.List;
 
 public class TopicService {
     private final DAOFactory factory;
-    private final static Logger logger;
+    public static final Logger logger =Logger.getLogger(TopicService.class);
 
-    //logger configuration
-    static {
-        logger = LogConfigurator.getLogger(TopicService.class);
-    }
 
     public TopicService() {
         this.factory = new MySqlDAOFactory();

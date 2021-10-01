@@ -1,27 +1,22 @@
 package com.quiz.web.filters;
 
-import com.quiz.DB.LogConfigurator;
+import com.quiz.entity.User;
 import com.quiz.web.command.ErrorCommand;
 import com.quiz.web.utils.ErrorMessage;
-import com.quiz.entity.User;
-import com.quiz.service.UserService;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/profile","/edit","/create", "/profile/results", "/start","/editQuizInfo" ,"/editQuizQuestions","/user/delete","/finish","/logout","/delete","/profile/users","/profile/edit","/user/edit"})
+/**
+ * Authorization filter doesn't give access to basic functions to user that hasn't logged in
+ */
+@WebFilter(urlPatterns = {"/profile","/edit","/create", "/profile/results", "/start","/editQuizInfo" ,"/editQuizQuestions","/user/delete","/finish","/delete","/profile/users","/profile/edit","/user/edit"})
 public class AuthorizationFilter implements Filter {
-    private static Logger logger;
 
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        logger = LogConfigurator.getLogger(UserService.class);
-    }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {

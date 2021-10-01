@@ -1,6 +1,5 @@
 package com.quiz.DB.dao.impl;
 
-import com.quiz.DB.LogConfigurator;
 import com.quiz.DB.dao.interfaces.IAbstractDAO;
 import com.quiz.exceptions.UnsuccessfulQueryException;
 import org.apache.log4j.Logger;
@@ -14,9 +13,12 @@ import java.util.List;
 import java.util.Objects;
 
 import static com.quiz.DB.DBConnection.closeResultSet;
-
+/**
+* Abstract DAO class that has generic methods: findAll, findById, update, create, delete.
+*/
 public abstract class AbstractDAO<E> implements IAbstractDAO<E> {
-    private final static Logger logger;
+    public static final Logger logger =Logger.getLogger(AbstractDAO.class);
+
     protected Connection connection;
 
     protected AbstractDAO(Connection connection) {
@@ -26,9 +28,7 @@ public abstract class AbstractDAO<E> implements IAbstractDAO<E> {
     public void setConnection(Connection connection) {
         this.connection = connection;
     }
-    static {
-        logger = LogConfigurator.getLogger(QuizDAO.class);
-    }
+
 
     protected abstract PreparedStatement getSelectEntityByIdStatement() throws SQLException;
 

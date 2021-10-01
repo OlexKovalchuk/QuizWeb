@@ -23,7 +23,7 @@ public class CommandFactoryTest {
 
     @Before
     public void setUp() throws Exception {
-        factory = new CommandFactory(request, response);
+        factory = new CommandFactory(request);
     }
     @Test
     public void defineCommandByUnknownUrlAndGetErrorCommandGetMethod() {

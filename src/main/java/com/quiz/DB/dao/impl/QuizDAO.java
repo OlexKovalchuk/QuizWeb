@@ -1,12 +1,12 @@
 package com.quiz.DB.dao.impl;
 
 import com.quiz.DB.DAOFactory;
-import com.quiz.DB.LogConfigurator;
-import com.quiz.DB.MySqlDAOFactory;
 import com.quiz.DB.DBConnection;
+import com.quiz.DB.MySqlDAOFactory;
 import com.quiz.DB.dao.interfaces.IQuizDAO;
 import com.quiz.entity.Quiz;
 import com.quiz.exceptions.UnsuccessfulQueryException;
+import com.quiz.web.utils.Pageable;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -16,7 +16,7 @@ import java.util.List;
 import static com.quiz.DB.DBConnection.closeResultSet;
 
 public class QuizDAO extends AbstractDAO<Quiz> implements IQuizDAO {
-    private final static Logger logger;
+    public static final Logger logger =Logger.getLogger(QuizDAO.class);
 
     public QuizDAO(Connection connection) {
         super(connection);
@@ -81,26 +81,25 @@ public class QuizDAO extends AbstractDAO<Quiz> implements IQuizDAO {
     @Override
     protected Quiz getEntityFromResultSet(ResultSet resultSet) throws SQLException {
         return new Quiz.Builder()
-                .setId(resultSet.getInt("id"))
-                .setHeader(resultSet.getString("header"))
-                .setDescription(resultSet.getString("description"))
-                .setDifficult(resultSet.getString("difficult"))
-                .setDuration(resultSet.getInt("duration"))
-                .setTopicId(resultSet.getInt("topic_id"))
-                .setCreateDate(resultSet.getTimestamp("create_date"))
+                .id(resultSet.getInt("id"))
+                .header(resultSet.getString("header"))
+                .description(resultSet.getString("description"))
+                .difficult(resultSet.getString("difficult"))
+                .duration(resultSet.getInt("duration"))
+                .topicId(resultSet.getInt("topic_id"))
+                .createDate(resultSet.getTimestamp("create_date"))
                 .build();
     }
 
-    static {
-        logger = LogConfigurator.getLogger(QuizDAO.class);
-    }
 
-    public int getQuizCount(String topic) {
+    @Override
+    public int getQuizCount(int topicId) {
         int count = 0;
         ResultSet resultSet = null;
         try (PreparedStatement statement =
-                     connection.prepareStatement("SELECT COUNT(*) as count from quiz " + (topic.equals("all") ? " " :
-                             " where quiz.topic_id = " + Integer.parseInt(topic)))) {
+                     connection.prepareStatement("SELECT COUNT(*) as count from quiz q where q.topic_id=? or ?=0")) {
+            statement.setInt(1, topicId);
+            statement.setInt(2, topicId);
             resultSet = statement.executeQuery();
             resultSet.next();
             count = resultSet.getInt("count");
@@ -115,7 +114,6 @@ public class QuizDAO extends AbstractDAO<Quiz> implements IQuizDAO {
 
 
 
-
     private void getSingleQuiz(ResultSet resultSet, Quiz quiz) throws SQLException {
         quiz.setHeader(resultSet.getString("header"));
         quiz.setId(resultSet.getInt("id"));
@@ -127,21 +125,23 @@ public class QuizDAO extends AbstractDAO<Quiz> implements IQuizDAO {
         quiz.setCount(resultSet.getInt("count"));
     }
 
-    public List<Quiz> getAllQuizWithPagination(int offset, String topic, String type, String param) {
+    @Override
+    public List<Quiz> getAllQuizzes(int topicId, Pageable pageable) {
         ResultSet resultSet = null;
+        String sort = pageable.getSort().equals("count") ? "" : (" , " + pageable.getSort());
         String sql = "SELECT quiz.id, quiz.header,quiz.difficult," +
                 "quiz.description, quiz.create_date, quiz.duration,t.name as name, COUNT(quiz.id=q.quiz_id) as count " +
                 "FROM quiz  " +
                 "JOIN topic t " +
-                "on t.id = quiz.topic_id INNER JOIN question q on q.quiz_id = quiz.id " + (topic.equals("all") ? " "
-                : " where quiz.topic_id = " + Integer.parseInt(topic)) + " group  by  " + (param.equals(
-                "count") ? " " : param) + (param.length() > 0 && !param.equals("count") ? "," : "") + " quiz.id " +
-                " " + type + " " + param + "  limit 4 " +
-                "offset" +
-                " ? ";
+                "on t.id = quiz.topic_id INNER JOIN question q on q.quiz_id = quiz.id where (topic_id=? or ?=0)  " +
+                "group  by  quiz.id " + sort + pageable.getSortWithOrder() +
+                " limit " + pageable.getSize() + " offset " + pageable.getOffset();
+
         List<Quiz> quizzes = new ArrayList<>();
+
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, offset);
+            statement.setInt(1, topicId);
+            statement.setInt(2, topicId);
             System.out.println(statement);
             resultSet = statement.executeQuery();
             Quiz quiz;
@@ -160,7 +160,7 @@ public class QuizDAO extends AbstractDAO<Quiz> implements IQuizDAO {
         return quizzes;
     }
 
-
+    @Override
     public boolean insertQuiz(Quiz quiz) {
         int changes = 0;
         try (PreparedStatement statement = connection.prepareStatement("insert into quiz(description,difficult," +
@@ -185,10 +185,55 @@ public class QuizDAO extends AbstractDAO<Quiz> implements IQuizDAO {
             logger.error(e.getMessage());
             throw new UnsuccessfulQueryException();
         }
+        return changes > 0;
+    }
+    @Override
+    public boolean isQuizHasResults(int id) {
+        ResultSet resultSet = null;
+        boolean hasResults = false;
+        try (PreparedStatement statement = connection.prepareStatement("SELECT  CASE WHEN COUNT(r.id) > 0 THEN true ELSE " +
+                "false " +
+                "END FROM result r WHERE r.quiz_id = ?")) {
+            statement.setInt(1, id);
+            resultSet = statement.executeQuery();
+            hasResults = resultSet.getBoolean(1);
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            throw new UnsuccessfulQueryException();
+        } finally {
+            closeResultSet(resultSet);
+        }
+        return hasResults;
+    }
+    @Override
+    public boolean archiveQuiz(int id) {
+        int changes =0;
+        try (PreparedStatement statement = connection.prepareStatement("Update  quiz q set q.archived =1 where  q.id " +
+                "=?")) {
+            statement.setInt(1, id);
+           changes= statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            throw new UnsuccessfulQueryException();
+        }
         return changes>0;
     }
-
-
-
-
+    @Override
+    public boolean isHeaderExists(String header) {
+        ResultSet resultSet = null;
+        boolean isExist = false;
+        try (PreparedStatement statement = connection.prepareStatement("SELECT  CASE WHEN COUNT(q.id) > 0 THEN true ELSE " +
+                "false " +
+                "END FROM quiz q WHERE q.header = ?")) {
+            statement.setString(1, header);
+            resultSet = statement.executeQuery();
+            isExist = resultSet.getBoolean(1);
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            throw new UnsuccessfulQueryException();
+        } finally {
+            closeResultSet(resultSet);
+        }
+        return isExist;
+    }
 }

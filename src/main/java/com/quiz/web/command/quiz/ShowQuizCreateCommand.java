@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class CreateTestCommand implements Command {
+public class ShowQuizCreateCommand implements Command {
     @Override
     public WebPath execute(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {

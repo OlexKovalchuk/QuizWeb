@@ -12,12 +12,7 @@ import java.sql.SQLException;
 public class DBConnection implements Closeable {
 
     private final Connection connection;
-    private final static Logger logger;
-
-    //logger configuration
-    static {
-        logger = LogConfigurator.getLogger(DBConnection.class);
-    }
+    public static final Logger logger =Logger.getLogger(DBConnection.class);
 
     public DBConnection() {
         try {

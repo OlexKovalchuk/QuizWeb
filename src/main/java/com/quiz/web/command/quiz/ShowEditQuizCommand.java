@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class EditQuizCommand implements Command {
+public class ShowEditQuizCommand implements Command {
     @Override
     public WebPath execute(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {

@@ -1,9 +1,6 @@
 package com.quiz.exceptions;
 
-/**
- * This exception is supposed to be thrown from DAO class's
- * methods, which are considered highly unsafe and are forbidden to be called
- */
+
 public class DangerousQueryDeniedException extends RuntimeException{
     public DangerousQueryDeniedException() {
     }

@@ -22,6 +22,13 @@ public class EditQuizQuestionsCommand implements Command {
         List<Question> questions = new ArrayList<>();
         Enumeration<String> params = request.getParameterNames();
         int id = Integer.parseInt(request.getParameter(params.nextElement()));
+        getQuizQuestionsAndAnswersFromRequest(request, questions, params);
+        questionService.updateQuizQuestionsById(questions,id);
+        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+        return new WebPath("", WebPath.DispatchType.STAND);
+    }
+
+    static void getQuizQuestionsAndAnswersFromRequest(HttpServletRequest request, List<Question> questions, Enumeration<String> params) {
         String param = params.nextElement();
         while (params.hasMoreElements()) {
             if (param.charAt(0) == 'd') {
@@ -52,8 +59,5 @@ public class EditQuizQuestionsCommand implements Command {
                 questions.add(question);
             }
         }
-        questionService.updateQuizQuestionsById(questions,id);
-        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
-        return new WebPath("", WebPath.DispatchType.STAND);
     }
 }

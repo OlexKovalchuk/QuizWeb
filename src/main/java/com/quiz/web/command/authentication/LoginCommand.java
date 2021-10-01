@@ -1,6 +1,6 @@
 package com.quiz.web.command.authentication;
 
-import com.quiz.DB.LogConfigurator;
+import com.quiz.DB.dao.impl.RoleDAO;
 import com.quiz.web.command.Command;
 import com.quiz.web.utils.Encryptor;
 import com.quiz.web.utils.Pages;
@@ -17,18 +17,14 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 public class LoginCommand implements Command {
-    private final static Logger logger;
+    public static final Logger logger =Logger.getLogger(RoleDAO.class);
 
-    static {
-        logger = LogConfigurator.getLogger(LoginCommand.class);
-    }
 
     private final static String ERROR_MESSAGE = "errorMessage";
 
     @Override
     public WebPath execute(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         logger.debug("LoginCommand starts: ");
         HttpSession session = request.getSession(true);
 

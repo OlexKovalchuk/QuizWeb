@@ -15,7 +15,7 @@
         <%@ include file="/frontend/css/style.css" %>
     </style>
 </head>
-<t:page title="Quiz editor">
+<t:header >
     <div class="container">
         <form class="modal-content animate"
               action="${pageContext.request.contextPath}/editQuizInfo" id="editQuizInfo" method="post">
@@ -193,5 +193,5 @@
             return true;
         }
     </script>
-</t:page>
+</t:header>
 </html>

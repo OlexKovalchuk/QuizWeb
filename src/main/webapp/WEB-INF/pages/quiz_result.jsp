@@ -14,7 +14,7 @@
         <%@include file="/frontend/css/profile.scss" %>
     </style>
 </head>
-<t:page title="Quiz result">
+<t:header >
     <div class="container animate">
         <hr style=" clear: both;
     border: 1px solid transparent;
@@ -40,5 +40,5 @@
             </button>
         </center>
     </div>
-</t:page>
+</t:header>
 </html>

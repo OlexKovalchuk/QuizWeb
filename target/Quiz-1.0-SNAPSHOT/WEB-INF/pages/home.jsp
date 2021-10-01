@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
-<t:page title="Home">
+<t:header>
     <c:if test="${sessionScope.user!=null && sessionScope.user.role.roleName.equals('admin')}">
         <form action="${pageContext.request.contextPath}/create" method="get">
             <button style="right:5%;top:12.5%; width:10%; position:absolute;" type="submit">
@@ -34,25 +34,23 @@
     <form action="${pageContext.request.contextPath}/home" method="get">
         <label for="plan" href=""><fmt:message
                 key="msg.sort-by"/></label><select name="sort" id="plan">
-        <option value="question" <c:if test="${requestScope.sort.equals('question')}">selected</c:if>><fmt:message
+        <option value="count" <c:if test="${requestScope.sort.equals('count')}">selected</c:if>><fmt:message
                 key="msg.questions"/></option>
         <option value="duration" <c:if test="${requestScope.sort.equals('duration')}">selected</c:if>><fmt:message
                 key="msg.duration"/></option>
         <option value="difficult" <c:if test="${requestScope.sort.equals('difficult')}">selected</c:if>><fmt:message
                 key="msg.difficult"/></option>
-        <option value="date" <c:if test="${requestScope.sort.equals('date')}">selected</c:if>><fmt:message
+        <option value="create_date" <c:if test="${requestScope.sort.equals('create_date')}">selected</c:if>><fmt:message
                 key="msg.date"/></option>
-        <option value="topic" <c:if test="${requestScope.sort.equals('topic')}">selected</c:if>><fmt:message
-                key="msg.topic"/></option>
     </select>
-        <label for="topic" href=""><fmt:message
+        <label for="topicId" href=""><fmt:message
                 key="msg.topic"/></label>
-        <select name="topic" id="topic">
-            <option value="all" <c:if test="${requestScope.topic.equals('all')}">selected</c:if>><fmt:message
+        <select name="topicId" id="topicId">
+            <option value="0" <c:if test="${requestScope.topicId==0}">selected</c:if>><fmt:message
                     key="msg.all"/></option>
             <c:forEach items="${requestScope.topics}" var="topic">
                 <option value="${topic.id}"
-                        <c:if test="${not requestScope.topic.equals('all') && requestScope.topic==topic.id}">selected</c:if>>${topic.name} </option>
+                        <c:if test="${topic.id==requestScope.topicId}">selected</c:if>>${topic.name} </option>
             </c:forEach>
         </select>
         <button type="submit" style="left: 8.8%;
@@ -132,6 +130,11 @@
                 </div>
             </c:forEach>
         </div>
+        <c:if test="${requestScope.errorQuizStart}">
+            <div style="color:red;font-size: 20px ; text-align:center;">
+                <fmt:message key="msg.quiz-start-error"/>
+            </div>
+        </c:if>
         <div class="center">
             <div class="pagination">
                 <a href="#">&laquo;</a>
@@ -150,5 +153,5 @@
             return '${pageContext.request.contextPath}/home?sort=' + sort.value + '&page=' + page;
         }
     </script>
-</t:page>
+</t:header>
 </html>

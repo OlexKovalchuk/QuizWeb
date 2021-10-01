@@ -1,8 +1,6 @@
 package com.quiz.exceptions;
 
-/**
- * This exception is thrown when some problem occurs during URL parsing
- */
+
 public class UnexistingUrlException extends RuntimeException{
     public UnexistingUrlException() {
     }

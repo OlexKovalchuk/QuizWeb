@@ -13,7 +13,10 @@ import java.io.IOException;
 
 ;
 
-@WebFilter(urlPatterns = {"/create","/edit","/editQuizQuestions","/editQuizInfo","/delete","/user/edit","/user/delete","/profile/users"})
+/**
+ * Admin web filter doesn't give access to all functions to user that hasn't ADMIN ROLE
+ */
+@WebFilter(urlPatterns = {"/create","/edit","/editQuizQuestions","/editQuizInfo","/delete","/user/edit","/user/delete","/profile/users","/profile/users/edit","/profile/users/delete"})
 public class AdminAuthorizationFilter implements Filter {
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {

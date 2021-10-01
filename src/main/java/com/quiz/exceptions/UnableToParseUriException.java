@@ -1,8 +1,5 @@
 package com.quiz.exceptions;
 
-/**
- * Is thrown when uri can't be parsed in UriMarshaller
- */
 public class UnableToParseUriException extends RuntimeException{
     public UnableToParseUriException() {
         super();

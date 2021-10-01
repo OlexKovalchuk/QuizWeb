@@ -99,52 +99,52 @@ public class Quiz implements Serializable {
     public static class Builder {
         private Quiz quiz = new Quiz();
 
-        public Builder setId(int id) {
+        public Builder id(int id) {
             quiz.setId(id);
             return this;
         }
 
-        public Builder setDescription(String description) {
+        public Builder description(String description) {
             quiz.setDescription(description);
             return this;
         }
 
-        public Builder setDifficult(String difficult) {
+        public Builder difficult(String difficult) {
             quiz.setDifficult(difficult);
             return this;
         }
 
-        public Builder setDuration(int duration) {
+        public Builder duration(int duration) {
             quiz.setDuration(duration);
             return this;
         }
 
-        public Builder setTopicId(int topicId) {
+        public Builder topicId(int topicId) {
             quiz.setTopicId(topicId);
             return this;
         }
 
-        public Builder setCreateDate(Date createDate) {
+        public Builder createDate(Date createDate) {
             quiz.setCreateDate(createDate);
             return this;
         }
 
-        public Builder setTopicName(String topicName) {
+        public Builder topicName(String topicName) {
             quiz.setTopicName(topicName);
             return this;
         }
 
-        public Builder setQuestions(List<Question> questions) {
+        public Builder questions(List<Question> questions) {
             quiz.setQuestions(questions);
             return this;
         }
 
-        public Builder setHeader(String header) {
+        public Builder header(String header) {
             quiz.setHeader(header);
             return this;
         }
 
-        public Builder setCount(int count) {
+        public Builder count(int count) {
             quiz.setCount(count);
             return this;
         }public Quiz build(){

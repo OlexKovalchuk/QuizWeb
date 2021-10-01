@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class LoadEditPersonalInfoCommand implements Command {
+public class ShowEditPersonalInfoCommand implements Command {
     @Override
     public WebPath execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         return new WebPath( Pages.PERSONAL_INFO, WebPath.DispatchType.FORWARD);

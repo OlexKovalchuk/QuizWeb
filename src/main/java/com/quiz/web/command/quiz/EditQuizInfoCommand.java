@@ -16,16 +16,19 @@ public class EditQuizInfoCommand implements Command {
     public WebPath execute(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {
         Quiz quiz = new Quiz.Builder()
-                .setId(Integer.parseInt(request.getParameter("id")))
-                .setHeader(request.getParameter("header"))
-                .setDescription(request.getParameter("description"))
-                .setTopicId(Integer.parseInt(request.getParameter("topic")))
-                .setDifficult(request.getParameter("difficult"))
-                .setDuration(Integer.parseInt(request.getParameter("duration"))).build();
+                .id(Integer.parseInt(request.getParameter("id")))
+                .header(request.getParameter("header"))
+                .description(request.getParameter("description"))
+                .topicId(Integer.parseInt(request.getParameter("topic")))
+                .difficult(request.getParameter("difficult"))
+                .duration(Integer.parseInt(request.getParameter("duration"))).build();
         QuizService quizService = new QuizService();
-        System.out.println("SAF");
-        quizService.updateQuizInfoById(quiz);
-        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
-        return new WebPath("", WebPath.DispatchType.STAND);
+        if ( quizService.updateQuizInfoById(quiz)){
+            response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+            return new WebPath("", WebPath.DispatchType.STAND);
+        }
+        else{
+            return new WebPath(WebPath.WebPageEnum.QUIZ_EDIT.getPath(), WebPath.DispatchType.FORWARD);
+        }
     }
 }

@@ -1,12 +1,12 @@
 package com.quiz.web.command.authentication;
 
+import com.quiz.entity.Role;
+import com.quiz.entity.User;
+import com.quiz.service.UserService;
 import com.quiz.web.command.Command;
 import com.quiz.web.utils.Encryptor;
 import com.quiz.web.utils.Pages;
 import com.quiz.web.utils.WebPath;
-import com.quiz.entity.Role;
-import com.quiz.entity.User;
-import com.quiz.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,7 +14,6 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.sql.Date;
 
 public class RegisterCommand implements Command {
     @Override
@@ -40,8 +39,6 @@ public class RegisterCommand implements Command {
         }
         user.setSurname(surname);
         user.setEmail(email);
-        user.setBlock(0);
-        user.setCreationDate(new Date(System.currentTimeMillis()));
 
         userService.insertUser(user);
         session.setAttribute("user", user);

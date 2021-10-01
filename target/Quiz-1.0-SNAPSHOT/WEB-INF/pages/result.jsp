@@ -15,7 +15,7 @@
         <%@include file="/frontend/css/pagination.scss" %>
     </style>
 </head>
-<t:page title="Results">
+<t:header >
     <form action="${pageContext.request.contextPath}/profile/results" method="get">
         <label for="plan" href="">Sort by</label><select name="sort" id="plan">
         <option
@@ -79,5 +79,5 @@
             return '${pageContext.request.contextPath}/profile/results?sort=' + sort.value + '&page=' + page;
         }
     </script>
-</t:page>
+</t:header>
 </html>

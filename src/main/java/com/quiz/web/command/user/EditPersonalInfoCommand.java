@@ -38,6 +38,7 @@ public class EditPersonalInfoCommand implements Command {
                 e.printStackTrace();
             }
         }
+
         userService.updateUser(user);
         return new WebPath(WebPath.WebPageEnum.PROFILE.getPath(), WebPath.DispatchType.REDIRECT);
     }

@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<t:page title="Your info">
+<t:header >
     <form class="modal-content animate" action="${pageContext.request.contextPath}/profile/edit" method="post">
         <div class="container">
             <label><b><fmt:message key="msg.name"/></b></label>
@@ -46,5 +46,5 @@
             <button type="submit"><fmt:message key="msg.edit"/></button>
         </div>
     </form>
-</t:page>
+</t:header>
 </html>

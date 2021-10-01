@@ -1,22 +1,20 @@
 package com.quiz.service;
 
-import com.quiz.DB.*;
+import com.quiz.DB.DAOFactory;
+import com.quiz.DB.DBConnection;
+import com.quiz.DB.MySqlDAOFactory;
 import com.quiz.DB.dao.impl.QuestionDAO;
 import com.quiz.DB.dao.impl.QuizDAO;
 import com.quiz.entity.Quiz;
+import com.quiz.web.utils.Pageable;
 import org.apache.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class QuizService {
     private final DAOFactory factory;
-    private final static Logger logger;
+    public static final Logger logger =Logger.getLogger(QuizService.class);
 
-    //logger configuration
-    static {
-        logger = LogConfigurator.getLogger(QuizService.class);
-    }
 
 
     public QuizService() {
@@ -36,7 +34,10 @@ public class QuizService {
     public boolean updateQuizInfoById(Quiz quiz) {
         try (DBConnection conn = factory.createConnection()) {
             QuizDAO quizDAO = factory.createQuizDAO(conn);
-        return    quizDAO.update(quiz);
+            if (quizDAO.isHeaderExists(quiz.getHeader())) {
+                return  false;
+            }
+            return quizDAO.update(quiz);
         }
     }
 
@@ -44,112 +45,33 @@ public class QuizService {
     public boolean insertQuiz(Quiz quiz) {
         try (DBConnection conn = factory.createConnection()) {
             QuizDAO quizDAO = factory.createQuizDAO(conn);
-           return quizDAO.insertQuiz(quiz);
+            return quizDAO.insertQuiz(quiz);
         }
     }
 
     public boolean deleteQuiz(int id) {
         try (DBConnection conn = factory.createConnection()) {
             QuizDAO quizDAO = factory.createQuizDAO(conn);
-         return   quizDAO.delete(id);
-        }
-    }
-
-    public int getQuizCount(String topic) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuizDAO quizDAO = factory.createQuizDAO(conn);
-            return quizDAO.getQuizCount(topic);
-        }
-    }
-
-    public List<Quiz> getAllQuizWithPagination(int page, String topic) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuizDAO quizDAO = factory.createQuizDAO(conn);
-            return quizDAO.getAllQuizWithPagination((page - 1) * 4, topic, "", "");
-        }
-    }
-
-    public void editQuiz(int id, Quiz quiz) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuizDAO quizDAO = factory.createQuizDAO(conn);
-            quizDAO.insertQuiz(quiz);
-        }
-    }
-
-    @Sort(type = "order by", param = "quiz.create_date")
-    public List<Quiz> getAllQuizWithPaginationByDate(int page, String topic) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuizDAO quizDAO = factory.createQuizDAO(conn);
-            Sort annotation = (Sort) QuizService.class.getMethod("getAllQuizWithPaginationByDate", int.class,
-                    String.class).getAnnotation(Sort.class);
-            return quizDAO.getAllQuizWithPagination((page - 1) * 4, topic, annotation.type(), annotation.param());
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
-        return new ArrayList<>();
-    }
-
-    @Sort(type = "order by", param = "t.name")
-    public List<Quiz> getAllQuizWithPaginationByTopic(int page, String topic) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuizDAO quizDAO = factory.createQuizDAO(conn);
-            try {
-                Sort annotation =
-                        (Sort) QuizService.class.getMethod("getAllQuizWithPaginationByTopic", int.class,
-                                String.class).getAnnotation(Sort.class);
-                return quizDAO.getAllQuizWithPagination((page - 1) * 4, topic, annotation.type(), annotation.param());
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
+            if (quizDAO.isQuizHasResults(id)) {
+                return quizDAO.archiveQuiz(id);
+            } else {
+                return quizDAO.delete(id);
             }
-            return new ArrayList<>();
         }
     }
 
-    @Sort(type = "order by", param = "quiz.duration")
-    public List<Quiz> getAllQuizWithPaginationByDuration(int page, String topic) {
+    public int getQuizCount(int topicId) {
         try (DBConnection conn = factory.createConnection()) {
             QuizDAO quizDAO = factory.createQuizDAO(conn);
-            try {
-                Sort annotation =
-                        (Sort) QuizService.class.getMethod("getAllQuizWithPaginationByDuration", int.class,
-                                String.class).getAnnotation(Sort.class);
-                return quizDAO.getAllQuizWithPagination((page - 1) * 4, topic, annotation.type(), annotation.param());
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            }
-            return new ArrayList<>();
+            return quizDAO.getQuizCount(topicId);
         }
     }
 
-    @Sort(type = "order by", param = "quiz.difficult")
-    public List<Quiz> getAllQuizWithPaginationByDifficult(int page, String topic) {
+    public List<Quiz> getAllQuizzes(int topicId, Pageable pageable) {
         try (DBConnection conn = factory.createConnection()) {
             QuizDAO quizDAO = factory.createQuizDAO(conn);
-            try {
-                Sort annotation =
-                        (Sort) QuizService.class.getMethod("getAllQuizWithPaginationByDifficult", int.class,
-                                String.class).getAnnotation(Sort.class);
-                return quizDAO.getAllQuizWithPagination((page - 1) * 4, topic, annotation.type(), annotation.param());
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            }
-            return new ArrayList<>();
+            return quizDAO.getAllQuizzes(topicId, pageable);
         }
     }
 
-    @Sort(type = "order by", param = "count")//count
-    public List<Quiz> getAllQuizWithPaginationByQuestion(int page, String topic) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuizDAO quizDAO = factory.createQuizDAO(conn);
-            try {
-                Sort annotation =
-                        (Sort) QuizService.class.getMethod("getAllQuizWithPaginationByQuestion", int.class,
-                                String.class).getAnnotation(Sort.class);
-                return quizDAO.getAllQuizWithPagination((page - 1) * 4, topic, annotation.type(), annotation.param());
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            }
-            return new ArrayList<>();
-        }
-    }
 }

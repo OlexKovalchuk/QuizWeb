@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<t:page title="Your info">
+<t:header >
     <form class="modal-content animate" action="${pageContext.request.contextPath}/user/edit" method="post">
         <div class="container">
             <label><b><fmt:message key="msg.name"/></b></label>
@@ -56,5 +56,5 @@
         <button style="background-color: red" type="submit"><fmt:message key="msg.user-delete"/></button>
     </form>
 
-</t:page>
+</t:header>
 </html>

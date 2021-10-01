@@ -1,0 +1,134 @@
+2021-09-30 02:46:22 ERROR Controller:43 - adsdsadasadssad
+2021-09-30 04:30:13 ERROR QuizDAO:185 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 4 offset 0' at line 1
+2021-09-30 04:33:46 ERROR QuizDAO:185 - Unknown column 'question' in 'group statement'
+2021-09-30 04:34:48 ERROR QuizDAO:185 - Can't group on 'count'
+2021-09-30 04:45:07 ERROR QuizDAO:187 - Unknown column 'question' in 'group statement'
+2021-09-30 04:47:35 ERROR QuizDAO:187 - Unknown column 'question' in 'group statement'
+2021-09-30 04:47:39 ERROR QuizDAO:187 - Unknown column 'question' in 'group statement'
+2021-09-30 04:48:37 ERROR QuizDAO:187 - Unknown column 'question' in 'group statement'
+2021-09-30 04:49:48 ERROR QuizDAO:187 - Unknown column 'question' in 'group statement'
+2021-09-30 04:53:01 ERROR QuizDAO:187 - Unknown column 'question' in 'group statement'
+2021-09-30 04:55:51 ERROR QuizDAO:187 - Unknown column 'question' in 'group statement'
+2021-10-01 01:35:23 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:35:23 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:35:23 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:35:23 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:35:38 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_test1` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`))
+2021-10-01 01:35:38 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE)
+2021-10-01 01:35:38 ERROR LoginCommand:62 - Account not found
+2021-10-01 01:35:38 ERROR LoginCommand:65 - Wrong password
+2021-10-01 01:35:38 ERROR QuizDAO:236 - Unknown column 'r' in 'field list'
+2021-10-01 01:35:38 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`answer`, CONSTRAINT `fk_answer_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE CASCADE)
+2021-10-01 01:35:38 ERROR QuizDAO:132 - Parameter index out of range (7 > number of parameters, which is 4).
+2021-10-01 01:35:38 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:35:38 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:35:38 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:35:38 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:35:39 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`question`, CONSTRAINT `fk_question_test` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`) ON DELETE CASCADE)
+2021-10-01 01:35:39 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:35:39 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:35:39 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:35:39 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:36:04 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_test1` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`))
+2021-10-01 01:36:04 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE)
+2021-10-01 01:36:04 ERROR LoginCommand:62 - Account not found
+2021-10-01 01:36:04 ERROR LoginCommand:65 - Wrong password
+2021-10-01 01:36:04 ERROR QuizDAO:236 - Unknown column 'r' in 'field list'
+2021-10-01 01:36:04 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`answer`, CONSTRAINT `fk_answer_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE CASCADE)
+2021-10-01 01:36:04 ERROR QuizDAO:132 - Parameter index out of range (7 > number of parameters, which is 4).
+2021-10-01 01:36:04 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:36:04 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:36:04 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:36:04 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:36:05 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`question`, CONSTRAINT `fk_question_test` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`) ON DELETE CASCADE)
+2021-10-01 01:36:05 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:36:05 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:36:05 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:36:05 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_test1` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`))
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE)
+2021-10-01 01:37:56 ERROR LoginCommand:62 - Account not found
+2021-10-01 01:37:56 ERROR LoginCommand:65 - Wrong password
+2021-10-01 01:37:56 ERROR QuizDAO:236 - Before start of result set
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`answer`, CONSTRAINT `fk_answer_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE CASCADE)
+2021-10-01 01:37:56 ERROR QuizDAO:132 - Parameter index out of range (7 > number of parameters, which is 4).
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`question`, CONSTRAINT `fk_question_test` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`) ON DELETE CASCADE)
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:37:56 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_test1` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`))
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE)
+2021-10-01 01:38:13 ERROR LoginCommand:62 - Account not found
+2021-10-01 01:38:13 ERROR LoginCommand:65 - Wrong password
+2021-10-01 01:38:13 ERROR QuizDAO:236 - Before start of result set
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`answer`, CONSTRAINT `fk_answer_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE CASCADE)
+2021-10-01 01:38:13 ERROR QuizDAO:132 - Parameter index out of range (7 > number of parameters, which is 4).
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`question`, CONSTRAINT `fk_question_test` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`) ON DELETE CASCADE)
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:38:13 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_test1` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`))
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE)
+2021-10-01 01:39:43 ERROR LoginCommand:62 - Account not found
+2021-10-01 01:39:43 ERROR LoginCommand:65 - Wrong password
+2021-10-01 01:39:43 ERROR QuizDAO:236 - Before start of result set
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`answer`, CONSTRAINT `fk_answer_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE CASCADE)
+2021-10-01 01:39:43 ERROR QuizDAO:132 - Parameter index out of range (7 > number of parameters, which is 4).
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`question`, CONSTRAINT `fk_question_test` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`) ON DELETE CASCADE)
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:39:43 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_test1` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`))
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE)
+2021-10-01 01:40:05 ERROR LoginCommand:62 - Account not found
+2021-10-01 01:40:05 ERROR LoginCommand:65 - Wrong password
+2021-10-01 01:40:05 ERROR QuizDAO:236 - Before start of result set
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`answer`, CONSTRAINT `fk_answer_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE CASCADE)
+2021-10-01 01:40:05 ERROR QuizDAO:132 - Parameter index out of range (7 > number of parameters, which is 4).
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`question`, CONSTRAINT `fk_question_test` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`) ON DELETE CASCADE)
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:40:05 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_test1` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`))
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`result`, CONSTRAINT `fk_result_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE)
+2021-10-01 01:41:27 ERROR LoginCommand:62 - Account not found
+2021-10-01 01:41:27 ERROR LoginCommand:65 - Wrong password
+2021-10-01 01:41:27 ERROR QuizDAO:236 - Before start of result set
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`answer`, CONSTRAINT `fk_answer_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE CASCADE)
+2021-10-01 01:41:27 ERROR QuizDAO:132 - Parameter index out of range (7 > number of parameters, which is 4).
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Data truncated for column 'difficult' at row 1
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Cannot add or update a child row: a foreign key constraint fails (`mydb`.`question`, CONSTRAINT `fk_question_test` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`) ON DELETE CASCADE)
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 01:41:27 ERROR QuizDAO:100 - Duplicate entry 'Math' for key 'topic.name_UNIQUE'
+2021-10-01 02:04:05 ERROR RoleDAO:58 - Account not found
+2021-10-01 02:08:40 ERROR QuizDAO:153 - Unknown column 'date' in 'group statement'
+2021-10-01 02:09:40 ERROR QuizDAO:153 - Unknown column 'topic' in 'group statement'
+2021-10-01 02:21:10 ERROR RoleDAO:61 - Wrong password
+2021-10-01 03:49:07 ERROR AbstractDAO:98 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-01 03:52:41 ERROR AbstractDAO:100 - Parameter index out of range (5 > number of parameters, which is 4).
+2021-10-01 03:53:47 ERROR AbstractDAO:100 - Data truncation: Data too long for column 'surname' at row 1

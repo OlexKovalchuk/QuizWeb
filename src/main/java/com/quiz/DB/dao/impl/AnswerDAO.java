@@ -1,6 +1,5 @@
 package com.quiz.DB.dao.impl;
 
-import com.quiz.DB.LogConfigurator;
 import com.quiz.DB.dao.interfaces.IAnswerDAO;
 import com.quiz.entity.Answer;
 import com.quiz.exceptions.UnsuccessfulQueryException;
@@ -13,7 +12,8 @@ import java.util.List;
 import static com.quiz.DB.DBConnection.closeResultSet;
 
 public class AnswerDAO extends AbstractDAO<Answer> implements IAnswerDAO {
-    private final static Logger logger;
+    public static final Logger logger =Logger.getLogger(AnswerDAO.class);
+
 
     public AnswerDAO(Connection connection) {
         super(connection);
@@ -81,10 +81,8 @@ public class AnswerDAO extends AbstractDAO<Answer> implements IAnswerDAO {
         return  answer;
     }
 
-    static {
-        logger = LogConfigurator.getLogger(QuizDAO.class);
-    }
 
+    @Override
     public List<Answer> getAnswersByQuestionId(int questionId) throws UnsuccessfulQueryException {
         List<Answer> answers = new ArrayList<>();
         ResultSet resultSet = null;
@@ -110,6 +108,7 @@ public class AnswerDAO extends AbstractDAO<Answer> implements IAnswerDAO {
         return answers;
     }
 
+    @Override
     public boolean insertAnswers(List<Answer> answers, int questionId) {
         int[] changes;
         try (PreparedStatement statement = connection.prepareStatement("INSERT INTO answer (question_id, " +

@@ -13,7 +13,7 @@
         <%@include file="/frontend/css/login.scss" %>
     </style>
 </head>
-<t:page title="Profile">
+<t:header >
 <div class="container animate">
     <center style="display: list-item;">
         <hr style=" clear: both;
@@ -41,5 +41,5 @@
         </c:if>
     </center>
 </div>
-</t:page>
+</t:header>
 </html>
