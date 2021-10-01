@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e8efcd3-c4b8-4e6d-8b5b-803e871fb352" name="Changes" comment="Final Version_">
+    <list default="true" id="7e8efcd3-c4b8-4e6d-8b5b-803e871fb352" name="Changes" comment="Final version">
+      <change afterPath="$PROJECT_DIR$/src/logs/Quiz.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/quiz/web/utils/Pageable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/quiz/web/filter/AdminFilterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/quiz/web/filter/AuthorizationFilterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/quiz/web/filter/EncodingFilterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/quiz/web/filter/LocalizationFilterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/Quiz_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Quiz_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/226322fb-449d-4577-a76f-21671b175380/entities/entities.dat" afterDir="false" />
@@ -603,7 +609,7 @@
       <workItem from="1633002465653" duration="588000" />
       <workItem from="1633009315672" duration="3930000" />
       <workItem from="1633017843668" duration="637000" />
-      <workItem from="1633037121997" duration="15260000" />
+      <workItem from="1633037121997" duration="15573000" />
     </task>
     <task id="LOCAL-00001" summary="alpha_version">
       <created>1631289404746</created>
@@ -673,7 +679,8 @@
     <MESSAGE value="alpha_version" />
     <MESSAGE value="beta_version" />
     <MESSAGE value="Final Version_" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Version_" />
+    <MESSAGE value="Final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
