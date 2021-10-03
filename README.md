@@ -15,3 +15,12 @@
 - складність тесту;
 - додає Питання в тест.
 Питання може мати одну або кілька правильних відповідей. Результатом проходження тесту є відсоток питань, на які студент правильно відповів по відношенню до загальної кількості питань (вважається, що студент правильно відповів на питання, якщо його відповідь співпадає в точності з правильними варіантами відповідей).
+
+
+# Database Screenshot :
+![image](https://user-images.githubusercontent.com/85992359/135771318-5427a5f0-b498-4ed3-9a3a-a80ddb24d0da.png)
+
+# Before run the project
+1) Download tomcat 10.0.10
+2) Install database database from /db/quiz_create.sql
+3) Set up your db properties in src/main/resources/database.properties
