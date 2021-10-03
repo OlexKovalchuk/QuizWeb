@@ -150,7 +150,7 @@ public class ResultDAO extends AbstractDAO<Result> implements IResultDAO {
 
     public List<Result> getUserResults(int id, Pageable pageable) {
         List<Result> results = new ArrayList<>();
-        String sql = "Select result.score,t.name as name,q.header as header,result.start_date,result.complete_date " +
+        String sql = "Select result.score,t.name as topic,q.header as header,result.start_date as date,result.complete_date " +
                 "from result join quiz q on result.quiz_id = q.id  " +
                 "join topic t on q.topic_id=t.id " +
                 " where user_id=?  " + pageable.getSortWithOrder()  + " limit "+pageable.getSize() +
@@ -163,10 +163,10 @@ public class ResultDAO extends AbstractDAO<Result> implements IResultDAO {
             Result result;
             while (resultSet.next()) {
                 result = new Result();
-                result.setStartDate(resultSet.getTimestamp("start_date"));
+                result.setStartDate(resultSet.getTimestamp("date"));
                 result.setCompleteDate(resultSet.getTimestamp("complete_date"));
                 result.setScore(resultSet.getInt("score"));
-                result.setTopicName(resultSet.getString("name"));
+                result.setTopicName(resultSet.getString("topic"));
                 result.setTestHeader(resultSet.getString("header"));
                 results.add(result);
             }

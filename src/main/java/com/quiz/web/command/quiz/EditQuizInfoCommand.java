@@ -23,12 +23,8 @@ public class EditQuizInfoCommand implements Command {
                 .difficult(request.getParameter("difficult"))
                 .duration(Integer.parseInt(request.getParameter("duration"))).build();
         QuizService quizService = new QuizService();
-        if ( quizService.updateQuizInfoById(quiz)){
+        quizService.updateQuizInfoById(quiz);
             response.setStatus(HttpServletResponse.SC_NO_CONTENT);
             return new WebPath("", WebPath.DispatchType.STAND);
-        }
-        else{
-            return new WebPath(WebPath.WebPageEnum.QUIZ_EDIT.getPath(), WebPath.DispatchType.FORWARD);
-        }
     }
 }

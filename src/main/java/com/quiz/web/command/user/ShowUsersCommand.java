@@ -25,7 +25,7 @@ public class ShowUsersCommand implements Command {
         Pageable pageable = new Pageable.Builder()
                 .page(request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1)
                 .size(10)
-                .sort(request.getParameter("sort") != null ? request.getParameter("sort") : "")
+                .sort(request.getParameter("sort") != null ? request.getParameter("sort") : "score")
                 .ASC()
                 .build();
         users=userService.getAllUsers(activeUser.getId(),pageable);

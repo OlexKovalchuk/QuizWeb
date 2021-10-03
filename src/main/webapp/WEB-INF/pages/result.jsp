@@ -27,7 +27,7 @@
                 key="msg.score"/>
         </option>
         <option
-                <c:if test="${requestScope.sort.equals('block')}">selected</c:if> value="topic"><fmt:message
+                <c:if test="${requestScope.sort.equals('topic')}">selected</c:if> value="topic"><fmt:message
                 key="msg.topic"/>
         </option>
     </select>

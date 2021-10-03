@@ -132,3 +132,21 @@
 2021-10-01 03:49:07 ERROR AbstractDAO:98 - Data truncation: Data too long for column 'surname' at row 1
 2021-10-01 03:52:41 ERROR AbstractDAO:100 - Parameter index out of range (5 > number of parameters, which is 4).
 2021-10-01 03:53:47 ERROR AbstractDAO:100 - Data truncation: Data too long for column 'surname' at row 1
+2021-10-03 22:49:41 ERROR RoleDAO:61 - Wrong password
+2021-10-03 22:50:15 ERROR QuizDAO:201 - Before start of result set
+2021-10-03 22:50:15 ERROR QuizService:82 - Unsuccessful SQL query
+2021-10-03 23:01:05 ERROR RoleDAO:58 - Account not found
+2021-10-03 23:01:11 ERROR RoleDAO:61 - Wrong password
+2021-10-03 23:01:16 ERROR RoleDAO:61 - Wrong password
+2021-10-03 23:05:26 ERROR AnswerDAO:124 - Lock wait timeout exceeded; try restarting transaction
+2021-10-03 23:05:26 ERROR QuestionService:32 - Unsuccessful SQL query
+2021-10-03 23:09:48 ERROR RoleDAO:61 - Wrong password
+2021-10-03 23:11:33 ERROR ResultDAO:174 - Unknown column 'date' in 'order clause'
+2021-10-03 23:12:32 ERROR AnswerDAO:124 - Lock wait timeout exceeded; try restarting transaction
+2021-10-03 23:12:32 ERROR QuestionService:32 - Unsuccessful SQL query
+2021-10-03 23:13:26 ERROR ResultDAO:174 - Column 'start_date' not found.
+2021-10-03 23:15:42 ERROR ResultDAO:174 - Unknown column 'topic' in 'order clause'
+2021-10-03 23:16:30 ERROR RoleDAO:61 - Wrong password
+2021-10-03 23:18:27 ERROR UserDAO:127 - Unknown column 'date' in 'order clause'
+2021-10-03 23:24:28 ERROR QuestionDAO:133 - Lock wait timeout exceeded; try restarting transaction
+2021-10-03 23:24:28 ERROR QuizService:62 - Unsuccessful SQL query

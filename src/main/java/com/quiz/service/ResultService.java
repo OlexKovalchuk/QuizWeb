@@ -5,6 +5,7 @@ import com.quiz.DB.DBConnection;
 import com.quiz.DB.MySqlDAOFactory;
 import com.quiz.DB.dao.impl.ResultDAO;
 import com.quiz.entity.Result;
+import com.quiz.exceptions.UnsuccessfulQueryException;
 import com.quiz.web.utils.Pageable;
 import org.apache.log4j.Logger;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class ResultService {
     private final DAOFactory factory;
-    public static final Logger logger =Logger.getLogger(ResultService.class);
+    public static final Logger logger = Logger.getLogger(ResultService.class);
 
 
     public ResultService() {
@@ -20,20 +21,35 @@ public class ResultService {
     }
 
     public void updateResult(Result result) {
-        try (DBConnection conn = factory.createConnection()) {
-            ResultDAO resultDAO = factory.createResultDAO(conn);
-            resultDAO.update(result);
+        try (DBConnection connection = factory.createConnection()) {
+            ResultDAO resultDAO = factory.createResultDAO(connection);
+            try {
+                connection.setAutoCommit(false);
+                resultDAO.update(result);
+                connection.commit();
+            } catch (UnsuccessfulQueryException e) {
+                logger.error(e.getMessage());
+                connection.rollback();
+            }
         }
 
     }
 
     public boolean insertResult(Result result) {
-        try (DBConnection conn = factory.createConnection()) {
-            ResultDAO resultDAO = factory.createResultDAO(conn);
-            return resultDAO.create(result);
+        try (DBConnection connection = factory.createConnection()) {
+            ResultDAO resultDAO = factory.createResultDAO(connection);
+            try {
+                connection.setAutoCommit(false);
+                resultDAO.create(result);
+                connection.commit();
+            } catch (UnsuccessfulQueryException e) {
+                logger.error(e.getMessage());
+                connection.rollback();
+                return false;
+            }
+            return true;
         }
     }
-
 
 
     public int getUserResultsCount(int id) {
@@ -57,52 +73,4 @@ public class ResultService {
             return resultDAO.getUserResults(id, pageable);
         }
     }
-//
-//    @Sort(type = "order by", param = "result.start_date")
-//    public List<Result> getUserResultsWithPaginationByDate(int id, int page) {
-//        try (DBConnection conn = factory.createConnection()) {
-//            ResultDAO resultDAO = factory.createResultDAO(conn);
-//            try {
-//                Sort sortAnnotation =
-//                        (Sort) ResultService.class.getMethod("getUserResultsWithPaginationByDate", int.class,
-//                                int.class).getAnnotation(Sort.class);
-//                return resultDAO.getUserResults(id, (page - 1) * 5, sortAnnotation.type(), sortAnnotation.param());
-//            } catch (NoSuchMethodException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return new ArrayList<>();
-//    }
-//
-//    @Sort(type = "order by", param = "t.name")
-//    public List<Result> getUserResultsWithPaginationByTopic(int id, int page) {
-//        try (DBConnection conn = factory.createConnection()) {
-//            ResultDAO resultDAO = factory.createResultDAO(conn);
-//            try {
-//                Sort sortAnnotation =
-//                        (Sort) ResultService.class.getMethod("getUserResultsWithPaginationByTopic", int.class,
-//                                int.class).getAnnotation(Sort.class);
-//                return resultDAO.getUserResults(id, (page - 1) * 5, sortAnnotation.type(), sortAnnotation.param());
-//            } catch (NoSuchMethodException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return new ArrayList<>();
-//    }
-//
-//    @Sort(type = "order by", param = "q.header")
-//    public List<Result> getUserResultsWithPaginationByQuiz(int id, int page) {
-//        try (DBConnection conn = factory.createConnection()) {
-//            ResultDAO resultDAO = factory.createResultDAO(conn);
-//            try {
-//                Sort sortAnnotation =
-//                        (Sort) ResultService.class.getMethod("getUserResultsWithPaginationByQuiz", int.class,
-//                                int.class).getAnnotation(Sort.class);
-//                return resultDAO.getUserResults(id, (page - 1) * 5, sortAnnotation.type(), sortAnnotation.param());
-//            } catch (NoSuchMethodException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return new ArrayList<>();
-//    }
 }

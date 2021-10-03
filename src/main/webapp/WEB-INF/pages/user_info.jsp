@@ -4,9 +4,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="${sessionScope.lang}"/>
 <fmt:setBundle basename="language"/>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="java">
-
 <head>
     <meta charset="UTF-8">
     <title>Quiz</title>
@@ -15,7 +14,6 @@
         <%@ include file="/frontend/css/style.css" %>
     </style>
 </head>
-
 <t:header >
     <form class="modal-content animate" action="${pageContext.request.contextPath}/profile/edit" method="post">
         <div class="container">

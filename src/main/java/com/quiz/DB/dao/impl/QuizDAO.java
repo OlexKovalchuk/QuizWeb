@@ -133,7 +133,7 @@ public class QuizDAO extends AbstractDAO<Quiz> implements IQuizDAO {
                 "quiz.description, quiz.create_date, quiz.duration,t.name as name, COUNT(quiz.id=q.quiz_id) as count " +
                 "FROM quiz  " +
                 "JOIN topic t " +
-                "on t.id = quiz.topic_id INNER JOIN question q on q.quiz_id = quiz.id where (topic_id=? or ?=0)  " +
+                "on t.id = quiz.topic_id INNER JOIN question q on q.quiz_id = quiz.id where (topic_id=? or ?=0) and quiz.archived=0 " +
                 "group  by  quiz.id " + sort + pageable.getSortWithOrder() +
                 " limit " + pageable.getSize() + " offset " + pageable.getOffset();
 
@@ -196,6 +196,7 @@ public class QuizDAO extends AbstractDAO<Quiz> implements IQuizDAO {
                 "END FROM result r WHERE r.quiz_id = ?")) {
             statement.setInt(1, id);
             resultSet = statement.executeQuery();
+            resultSet.next();
             hasResults = resultSet.getBoolean(1);
         } catch (SQLException e) {
             logger.error(e.getMessage());
@@ -227,6 +228,7 @@ public class QuizDAO extends AbstractDAO<Quiz> implements IQuizDAO {
                 "END FROM quiz q WHERE q.header = ?")) {
             statement.setString(1, header);
             resultSet = statement.executeQuery();
+            resultSet.next();
             isExist = resultSet.getBoolean(1);
         } catch (SQLException e) {
             logger.error(e.getMessage());

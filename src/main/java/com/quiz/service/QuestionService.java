@@ -11,7 +11,7 @@ import java.util.List;
 
 public class QuestionService {
     private final DAOFactory factory;
-    public static final Logger logger =Logger.getLogger(QuestionService.class);
+    public static final Logger logger = Logger.getLogger(QuestionService.class);
 
 
     public QuestionService() {
@@ -19,12 +19,11 @@ public class QuestionService {
     }
 
 
-
-    public boolean updateQuizQuestionsById(List<Question> questions,int id) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuestionDAO questionDAO = factory.createQuestionDAO(conn);
-            questionDAO.delete(id);
-           return questionDAO.insertQuestions(questions,id);
+    public boolean updateQuizQuestionsById(List<Question> questions, int id) {
+        try (DBConnection connection = factory.createConnection()) {
+            QuestionDAO questionDAO = factory.createQuestionDAO(connection);
+                questionDAO.delete(id);
+                return questionDAO.insertQuestions(questions, id);
         }
     }
 }

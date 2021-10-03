@@ -1,6 +1,5 @@
 package com.quiz.entity;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Question {
@@ -45,10 +44,9 @@ public class Question {
         return answers;
     }
 
-    public boolean isCorrect(String[] answersArray) {
-        List<String> answersList = Arrays.asList(answersArray);
+    public boolean isCorrect(List<Integer>answersList) {
         for (int i = 0; i < answers.size(); i++) {
-            if ((answers.get(i).getAnswer() == 1 && !answersList.contains(Integer.toString(i))) || (answers.get(i).getAnswer() == 0 && answersList.contains(Integer.toString(i)))) {
+            if ((answers.get(i).getAnswer() == 1 && !answersList.contains(i)) || (answers.get(i).getAnswer() == 0 && answersList.contains(i))) {
                 return false;
             }
         }

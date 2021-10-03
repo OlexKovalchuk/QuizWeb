@@ -100,7 +100,7 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
 
     public List<User> getAllUsers(int id, Pageable pageable) {
         ResultSet resultSet = null;
-        String sql = "Select user.id,user.email,user.create_date,r" +
+        String sql = "Select user.id,user.email,user.create_date as date,r" +
                 ".name as " +
                 "role, user.block," +
                 "AVG(res.score) as avgscore from user join role r on user.role_id = r.id left outer join result res " +
@@ -119,7 +119,7 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
                 user.setEmail(resultSet.getString("email"));
                 user.setRole(Role.getRoleByName(resultSet.getString("role")));
                 user.setBlock(resultSet.getInt("block"));
-                user.setCreationDate(resultSet.getDate("create_date"));
+                user.setCreationDate(resultSet.getDate("date"));
                 user.setAverageScore(resultSet.getDouble("avgscore"));
                 users.add(user);
             }

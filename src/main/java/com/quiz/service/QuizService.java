@@ -6,6 +6,7 @@ import com.quiz.DB.MySqlDAOFactory;
 import com.quiz.DB.dao.impl.QuestionDAO;
 import com.quiz.DB.dao.impl.QuizDAO;
 import com.quiz.entity.Quiz;
+import com.quiz.exceptions.UnsuccessfulQueryException;
 import com.quiz.web.utils.Pageable;
 import org.apache.log4j.Logger;
 
@@ -13,8 +14,7 @@ import java.util.List;
 
 public class QuizService {
     private final DAOFactory factory;
-    public static final Logger logger =Logger.getLogger(QuizService.class);
-
+    public static final Logger logger = Logger.getLogger(QuizService.class);
 
 
     public QuizService() {
@@ -32,31 +32,46 @@ public class QuizService {
     }
 
     public boolean updateQuizInfoById(Quiz quiz) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuizDAO quizDAO = factory.createQuizDAO(conn);
-            if (quizDAO.isHeaderExists(quiz.getHeader())) {
-                return  false;
+        try (DBConnection connection = factory.createConnection()) {
+            QuizDAO quizDAO = factory.createQuizDAO(connection);
+            try {
+                connection.setAutoCommit(false);
+                quizDAO.update(quiz);
+                connection.commit();
+            } catch (UnsuccessfulQueryException e) {
+                logger.error(e.getMessage());
+                connection.rollback();
+                return false;
             }
-            return quizDAO.update(quiz);
+            return true;
         }
     }
 
 
     public boolean insertQuiz(Quiz quiz) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuizDAO quizDAO = factory.createQuizDAO(conn);
-            return quizDAO.insertQuiz(quiz);
+        try (DBConnection connection = factory.createConnection()) {
+            QuizDAO quizDAO = factory.createQuizDAO(connection);
+              return   quizDAO.insertQuiz(quiz);
         }
     }
 
     public boolean deleteQuiz(int id) {
-        try (DBConnection conn = factory.createConnection()) {
-            QuizDAO quizDAO = factory.createQuizDAO(conn);
-            if (quizDAO.isQuizHasResults(id)) {
-                return quizDAO.archiveQuiz(id);
-            } else {
-                return quizDAO.delete(id);
+        try (DBConnection connection = factory.createConnection()) {
+            QuizDAO quizDAO = factory.createQuizDAO(connection);
+            try {
+                connection.setAutoCommit(false);
+                if (quizDAO.isQuizHasResults(id)) {
+                     quizDAO.archiveQuiz(id);
+                } else {
+                     quizDAO.delete(id);
+                }
+                connection.commit();
+            } catch (UnsuccessfulQueryException e) {
+                logger.error(e.getMessage());
+                connection.rollback();
+                return false;
             }
+            return true;
         }
     }
 
